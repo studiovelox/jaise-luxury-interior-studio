@@ -1,0 +1,2331 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KHANNA & VÉRA | Bespoke Luxury Interior Architecture</title>
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#FAF8F5',
+            stonewarm: '#F2EFE9',
+            charcoal: '#1C1C1C',
+            taupe: '#6E6A64',
+            champagne: '#C5A880',
+            champagnedark: '#A6885E',
+            obsidian: '#111110'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          },
+          letterSpacing: {
+            editorial: '0.24em',
+            widest2: '0.32em'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --bg-alabaster: #FAF8F5;
+      --text-charcoal: #1C1C1C;
+      --accent-gold: #C5A880;
+    }
+    body {
+      background-color: #FAF8F5;
+      color: #1C1C1C;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .font-editorial {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    /* Custom subtle luxury scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF8F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C5A880;
+      border-radius: 3px;
+    }
+    /* Full-bleed Parallax Banner */
+    .parallax-banner {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      position: relative;
+    }
+    @media (max-width: 1024px) {
+      /* Smooth fallback on mobile/tablet where fixed attachment can jitter */
+      .parallax-banner {
+        background-attachment: scroll;
+      }
+    }
+    /* Range slider styling for Cost Estimator */
+    input[type="range"].luxury-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      background: #E2DDD5;
+      border-radius: 4px;
+      outline: none;
+    }
+    input[type="range"].luxury-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #C5A880;
+      border: 3px solid #FAF8F5;
+      box-shadow: 0 2px 8px rgba(28, 28, 28, 0.25);
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    input[type="range"].luxury-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      background: #A6885E;
+    }
+    /* Smooth layer transitions inside the 800vh renovation viewport */
+    .reno-layer {
+      transition: opacity 0.18s cubic-bezier(0.22, 1, 0.36, 1), transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    /* Subtle floating dust motes in light beams */
+    @keyframes floatMote {
+      0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.25; }
+      50% { transform: translateY(-14px) translateX(6px); opacity: 0.7; }
+    }
+    .dust-mote {
+      animation: floatMote 6s ease-in-out infinite;
+    }
+    /* Masonry hover zoom */
+    .masonry-card:hover .masonry-img {
+      transform: scale(1.06);
+    }
+  </style>
+</head>
+<body class="bg-alabaster text-charcoal antialiased selection:bg-champagne selection:text-white">
+
+  <!-- ===================================================================== -->
+  <!-- PART 1: THE 8-SCROLL ROOM RENOVATION HERO (800vh Sticky Section)      -->
+  <!-- ===================================================================== -->
+  <section id="hero-renovation-track" class="relative w-full" style="height: 800vh;">
+    <!-- 100vh Sticky Viewport -->
+    <div id="hero-sticky-viewport" class="sticky top-0 left-0 w-full h-screen overflow-hidden bg-[#121110] select-none">
+
+      <!-- MASTER ARCHITECTURAL PERSPECTIVE ROOM CANVAS (SVG + Procedural Lighting Layers) -->
+      <!-- All 8 stages depict the EXACT same grand high-ceiling salon in identical perspective -->
+      <div class="relative w-full h-full flex items-center justify-center">
+        <svg id="room-master-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" class="w-full h-full object-cover">
+          <defs>
+            <!-- STAGE 1 DEFS: Concrete, Exposed Brick, Raw Screed, Blueprint Grid -->
+            <linearGradient id="rawWallBack" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3A3835" />
+              <stop offset="50%" stop-color="#2E2C2A" />
+              <stop offset="100%" stop-color="#23211F" />
+            </linearGradient>
+            <linearGradient id="rawWallLeft" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#292725" />
+              <stop offset="100%" stop-color="#383532" />
+            </linearGradient>
+            <linearGradient id="rawWallRight" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#35322F" />
+              <stop offset="100%" stop-color="#1E1C1A" />
+            </linearGradient>
+            <linearGradient id="rawFloorGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#252422" />
+              <stop offset="100%" stop-color="#161514" />
+            </linearGradient>
+            <linearGradient id="rawCeilingGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#181715" />
+              <stop offset="100%" stop-color="#2B2927" />
+            </linearGradient>
+            <!-- Exposed Brick Pattern -->
+            <pattern id="brickPattern" width="60" height="28" patternUnits="userSpaceOnUse">
+              <rect width="60" height="28" fill="#4A352D" />
+              <rect x="2" y="2" width="26" height="10" fill="#634338" rx="1" />
+              <rect x="31" y="2" width="27" height="10" fill="#593B31" rx="1" />
+              <rect x="-12" y="15" width="27" height="10" fill="#54382E" rx="1" />
+              <rect x="18" y="15" width="26" height="10" fill="#6A483C" rx="1" />
+              <rect x="47" y="15" width="26" height="10" fill="#5C3D32" rx="1" />
+            </pattern>
+            <!-- Architectural Blueprint Grid Pattern -->
+            <pattern id="blueprintGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(197, 168, 128, 0.14)" stroke-width="1" />
+              <path d="M 40 0 L 40 80 M 0 40 L 80 40" fill="none" stroke="rgba(197, 168, 128, 0.05)" stroke-width="0.5" stroke-dasharray="4 4" />
+            </pattern>
+
+            <!-- STAGE 2 DEFS: Smooth Plastered Warm Alabaster Walls -->
+            <linearGradient id="plasterBack" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#EFECE6" />
+              <stop offset="55%" stop-color="#E5E0D7" />
+              <stop offset="100%" stop-color="#D8D2C7" />
+            </linearGradient>
+            <linearGradient id="plasterLeft" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F6F3EE" />
+              <stop offset="100%" stop-color="#E2DDD3" />
+            </linearGradient>
+            <linearGradient id="plasterRight" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#DDD7CC" />
+              <stop offset="100%" stop-color="#C9C2B6" />
+            </linearGradient>
+            <linearGradient id="daylightWindow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFFDF9" />
+              <stop offset="60%" stop-color="#F3EFE6" />
+              <stop offset="100%" stop-color="#E5DEC9" />
+            </linearGradient>
+
+            <!-- STAGE 3 DEFS: Recessed Gypsum False Ceiling -->
+            <linearGradient id="gypsumOuter" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F5F2EC" />
+              <stop offset="100%" stop-color="#E6E1D8" />
+            </linearGradient>
+            <linearGradient id="gypsumCoffer" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#DCD6CA" />
+              <stop offset="100%" stop-color="#EAE5DC" />
+            </linearGradient>
+
+            <!-- STAGE 4 DEFS: Herringbone Oak & Calacatta Marble Flooring -->
+            <linearGradient id="oakFloorBase" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#B9936C" />
+              <stop offset="45%" stop-color="#9E7953" />
+              <stop offset="100%" stop-color="#785838" />
+            </linearGradient>
+            <pattern id="herringbonePattern" width="90" height="45" patternUnits="userSpaceOnUse" patternTransform="skewX(-25)">
+              <rect width="90" height="45" fill="#A68059" />
+              <polygon points="0,0 45,22.5 45,35 0,12.5" fill="#B8926A" stroke="#7A5B3B" stroke-width="0.6" />
+              <polygon points="0,12.5 45,35 45,45 0,22.5" fill="#936E48" stroke="#7A5B3B" stroke-width="0.6" />
+              <polygon points="45,22.5 90,0 90,12.5 45,35" fill="#8C6743" stroke="#7A5B3B" stroke-width="0.6" />
+              <polygon points="45,35 90,12.5 90,25 45,45" fill="#AE8860" stroke="#7A5B3B" stroke-width="0.6" />
+            </pattern>
+            <linearGradient id="calacattaMarble" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F8F6F2" />
+              <stop offset="40%" stop-color="#EFECE6" />
+              <stop offset="70%" stop-color="#F7F5F0" />
+              <stop offset="100%" stop-color="#E3DED4" />
+            </linearGradient>
+
+            <!-- STAGE 5 DEFS: Walnut Fluted Wood & Sheer Linen Drapery -->
+            <pattern id="flutedWalnut" width="16" height="100" patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="6" height="100" fill="#5D3E28" />
+              <rect x="6" y="0" width="5" height="100" fill="#765238" />
+              <rect x="11" y="0" width="3" height="100" fill="#3B2415" />
+              <rect x="14" y="0" width="2" height="100" fill="#4A301D" />
+            </pattern>
+            <linearGradient id="linenCurtain" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="rgba(250,248,245,0.95)" />
+              <stop offset="25%" stop-color="rgba(235,230,220,0.82)" />
+              <stop offset="50%" stop-color="rgba(252,250,247,0.96)" />
+              <stop offset="75%" stop-color="rgba(229,223,212,0.85)" />
+              <stop offset="100%" stop-color="rgba(248,245,240,0.92)" />
+            </linearGradient>
+
+            <!-- STAGE 6 DEFS: Curved Bouclé Sofa & Marble Coffee Table -->
+            <linearGradient id="boucleSofaGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FBF9F5" />
+              <stop offset="65%" stop-color="#EAE4D9" />
+              <stop offset="100%" stop-color="#CEC5B6" />
+            </linearGradient>
+            <linearGradient id="boucleCushionGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFFFFF" />
+              <stop offset="100%" stop-color="#E5DEC9" />
+            </linearGradient>
+            <linearGradient id="travertineTable" x1="0" y1="0" x2="1" y2="0.4">
+              <stop offset="0%" stop-color="#E6DEC8" />
+              <stop offset="50%" stop-color="#D4C8B4" />
+              <stop offset="100%" stop-color="#B8AA93" />
+            </linearGradient>
+
+            <!-- STAGE 8 DEFS: 2700K Warm Cove & Chandelier Illumination -->
+            <radialGradient id="chandelierGlow" cx="50%" cy="32%" r="55%">
+              <stop offset="0%" stop-color="rgba(255, 223, 168, 0.65)" />
+              <stop offset="35%" stop-color="rgba(235, 190, 120, 0.25)" />
+              <stop offset="75%" stop-color="rgba(197, 168, 128, 0.06)" />
+              <stop offset="100%" stop-color="rgba(197, 168, 128, 0)" />
+            </radialGradient>
+            <linearGradient id="coveGlowTop" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="rgba(255, 214, 145, 0.85)" />
+              <stop offset="100%" stop-color="rgba(255, 214, 145, 0)" />
+            </linearGradient>
+            <radialGradient id="floorWarmPool" cx="50%" cy="76%" r="42%">
+              <stop offset="0%" stop-color="rgba(255, 218, 158, 0.34)" />
+              <stop offset="60%" stop-color="rgba(218, 175, 112, 0.12)" />
+              <stop offset="100%" stop-color="rgba(0, 0, 0, 0)" />
+            </radialGradient>
+          </defs>
+
+          <!-- ============================================================ -->
+          <!-- LAYER 1: STAGE 01 - RAW ARCHITECTURAL SPACE (Always base)    -->
+          <!-- ============================================================ -->
+          <g id="stage-layer-1" class="reno-layer" style="opacity: 1;">
+            <!-- Raw Ceiling Plane -->
+            <polygon points="0,0 1920,0 1480,210 440,210" fill="url(#rawCeilingGrad)" />
+            <!-- Exposed Concrete Ceiling Beams -->
+            <polygon points="180,0 240,0 560,210 520,210" fill="#1E1D1B" stroke="#33302D" stroke-width="1" />
+            <polygon points="640,0 700,0 820,210 785,210" fill="#1E1D1B" stroke="#33302D" stroke-width="1" />
+            <polygon points="1220,0 1280,0 1135,210 1100,210" fill="#1E1D1B" stroke="#33302D" stroke-width="1" />
+            <polygon points="1680,0 1740,0 1400,210 1360,210" fill="#1E1D1B" stroke="#33302D" stroke-width="1" />
+
+            <!-- Raw Back Wall -->
+            <rect x="440" y="210" width="1040" height="530" fill="url(#rawWallBack)" />
+            <!-- Exposed Brick Patches on Back Wall -->
+            <rect x="490" y="250" width="380" height="450" fill="url(#brickPattern)" opacity="0.55" />
+            <rect x="1120" y="260" width="310" height="440" fill="url(#brickPattern)" opacity="0.45" />
+            <!-- Concrete Formwork Tie Holes & Joints -->
+            <g stroke="#1E1C1A" stroke-width="1.5" opacity="0.7">
+              <line x1="440" y1="380" x2="1480" y2="380" />
+              <line x1="440" y1="550" x2="1480" y2="550" />
+              <line x1="880" y1="210" x2="880" y2="740" />
+              <line x1="1120" y1="210" x2="1120" y2="740" />
+            </g>
+
+            <!-- Raw Left Wall (with 2 Tall Window Openings) -->
+            <polygon points="0,0 440,210 440,740 0,1080" fill="url(#rawWallLeft)" />
+            <!-- Exposed Brick on Left Wall -->
+            <polygon points="20,90 420,250 420,710 20,990" fill="url(#brickPattern)" opacity="0.32" />
+            <!-- Raw Tall Window 1 (Foreground Left) -->
+            <polygon points="75,140 215,198 215,795 75,905" fill="#D8E0E5" />
+            <!-- Window 1 Deep Raw Reveal -->
+            <polygon points="215,198 235,206 235,780 215,795" fill="#1F1E1C" />
+            <!-- Raw Tall Window 2 (Mid Left) -->
+            <polygon points="275,222 385,268 385,725 275,782" fill="#D8E0E5" />
+            <polygon points="385,268 400,274 400,715 385,725" fill="#1F1E1C" />
+
+            <!-- Raw Right Wall -->
+            <polygon points="1480,210 1920,0 1920,1080 1480,740" fill="url(#rawWallRight)" />
+            <polygon points="1510,250 1890,95 1890,980 1510,715" fill="url(#brickPattern)" opacity="0.38" />
+
+            <!-- Raw Unfinished Screed Floor -->
+            <polygon points="440,740 1480,740 1920,1080 0,1080" fill="url(#rawFloorGrad)" />
+            <!-- Floor Perspective Screed Expansion Joints -->
+            <g stroke="#34322F" stroke-width="1.5" opacity="0.65">
+              <line x1="650" y1="740" x2="380" y2="1080" />
+              <line x1="960" y1="740" x2="960" y2="1080" />
+              <line x1="1270" y1="740" x2="1540" y2="1080" />
+              <line x1="310" y1="840" x2="1610" y2="840" />
+              <line x1="150" y1="960" x2="1770" y2="960" />
+            </g>
+
+            <!-- Raw Daylight Shafts from Left Windows -->
+            <polygon points="75,905 215,795 920,980 540,1080" fill="rgba(225, 232, 238, 0.09)" />
+            <polygon points="275,782 385,725 1040,860 820,930" fill="rgba(225, 232, 238, 0.07)" />
+
+            <!-- Architectural Blueprint Overlay & Survey Callouts (Unique to Stage 1) -->
+            <rect x="440" y="210" width="1040" height="530" fill="url(#blueprintGrid)" />
+            <g stroke="#C5A880" stroke-width="1" opacity="0.65" fill="#C5A880" font-family="Plus Jakarta Sans, sans-serif" font-size="13" letter-spacing="2">
+              <!-- Span Dimension -->
+              <line x1="450" y1="235" x2="1470" y2="235" stroke-dasharray="6 4" />
+              <text x="960" y="229" text-anchor="middle" stroke="none">SPAN: 8,400 MM CLEAR ARCH SHELL</text>
+              <!-- Vertical Height Dimension -->
+              <line x1="1455" y1="220" x2="1455" y2="730" stroke-dasharray="6 4" />
+              <text x="1442" y="475" text-anchor="end" stroke="none">H: 4,200 MM</text>
+              <!-- Center Axis Crosshair -->
+              <circle cx="960" cy="475" r="18" fill="none" stroke="#C5A880" stroke-width="1" stroke-dasharray="3 3" />
+              <line x1="932" y1="475" x2="988" y2="475" />
+              <line x1="960" y1="447" x2="960" y2="503" />
+              <text x="960" y="805" text-anchor="middle" stroke="none" opacity="0.8">FFL ±0.00 RAW STRUCTURAL SLAB</text>
+            </g>
+          </g>
+
+          <!-- ============================================================ -->
+          <!-- LAYER 2: STAGE 02 - WALL FINISHES & WARM ALABASTER PLASTER   -->
+          <!-- ============================================================ -->
+          <g id="stage-layer-2" class="reno-layer" style="opacity: 0;">
+            <!-- Smooth Alabaster Plastered Back Wall -->
+            <rect x="440" y="210" width="1040" height="530" fill="url(#plasterBack)" />
+            <!-- Smooth Plastered Left Wall -->
+            <polygon points="0,0 440,210 440,740 0,1080" fill="url(#plasterLeft)" />
+            <!-- Smooth Plastered Right Wall -->
+            <polygon points="1480,210 1920,0 1920,1080 1480,740" fill="url(#plasterRight)" />
+
+            <!-- Crisp Architectural Window Casings & Warm Daylight Panes -->
+            <!-- Window 1 (Foreground Left) -->
+            <polygon points="75,135 218,196 218,798 75,910" fill="url(#daylightWindow)" />
+            <polygon points="218,196 242,206 242,782 218,798" fill="#DED8CD" />
+            <polygon points="75,910 218,798 242,782 75,890" fill="#F7F4EE" />
+            <!-- Slender Black Steel Mullions -->
+            <line x1="148" y1="166" x2="148" y2="852" stroke="#2C2A29" stroke-width="3" />
+            <line x1="75" y1="410" x2="218" y2="445" stroke="#2C2A29" stroke-width="2.5" />
+            <line x1="75" y1="660" x2="218" y2="635" stroke="#2C2A29" stroke-width="2.5" />
+
+            <!-- Window 2 (Mid Left) -->
+            <polygon points="275,220 388,268 388,728 275,785" fill="url(#daylightWindow)" />
+            <polygon points="388,268 406,275 406,718 388,728" fill="#DED8CD" />
+            <line x1="332" y1="244" x2="332" y2="756" stroke="#2C2A29" stroke-width="2.5" />
+            <line x1="275" y1="455" x2="388" y2="475" stroke="#2C2A29" stroke-width="2" />
+            <line x1="275" y1="630" x2="388" y2="615" stroke="#2C2A29" stroke-width="2" />
+
+            <!-- Corner Shadow Gap Lines for Crisp Architectural Precision -->
+            <line x1="440" y1="210" x2="440" y2="740" stroke="#C5BEB2" stroke-width="2" />
+            <line x1="1480" y1="210" x2="1480" y2="740" stroke="#BDB5A7" stroke-width="2" />
+            <!-- Recessed Shadow Skirting Baseboard -->
+            <line x1="440" y1="734" x2="1480" y2="734" stroke="#B6AEA0" stroke-width="3" />
+            <line x1="0" y1="1072" x2="440" y2="734" stroke="#C2B9AA" stroke-width="3" />
+            <line x1="1480" y1="734" x2="1920" y2="1072" stroke="#ABA293" stroke-width="3" />
+          </g>
+
+          <!-- ============================================================ -->
+          <!-- LAYER 3: STAGE 03 - CEILING ARCHITECTURE & COFFERS           -->
+          <!-- ============================================================ -->
+          <g id="stage-layer-3" class="reno-layer" style="opacity: 0;">
+            <!-- Outer Gypsum Drop Ceiling Perimeter -->
+            <polygon points="0,0 1920,0 1480,210 440,210" fill="url(#gypsumOuter)" />
+            <!-- Deep Recessed Central Architectural Coffer -->
+            <polygon points="240,28 1680,28 1390,185 530,185" fill="#CECAC0" />
+            <!-- Coffer Inner Step Lip -->
+            <polygon points="275,42 1645,42 1375,178 545,178" fill="url(#gypsumCoffer)" />
+            <!-- Shadow Gap Perimeter Line -->
+            <polygon points="240,28 1680,28 1390,185 530,185" fill="none" stroke="#9E978B" stroke-width="2.5" />
+
+            <!-- Linear Minimalist HVAC Slot Diffusers -->
+            <line x1="490" y1="198" x2="1430" y2="198" stroke="#2D2B28" stroke-width="3.5" />
+            <line x1="140" y1="85" x2="445" y2="198" stroke="#2D2B28" stroke-width="3.5" />
+            <line x1="1780" y1="85" x2="1475" y2="198" stroke="#2D2B28" stroke-width="3.5" />
+
+            <!-- Trimless Recessed Architectural Downlight Housings (Pairs) -->
+            <g fill="#262422" stroke="#D5CFC4" stroke-width="1.5">
+              <ellipse cx="420" cy="115" rx="10" ry="4" />
+              <ellipse cx="455" cy="128" rx="9" ry="3.5" />
+              <ellipse cx="1500" cy="115" rx="10" ry="4" />
+              <ellipse cx="1465" cy="128" rx="9" ry="3.5" />
+              <ellipse cx="720" cy="196" rx="7" ry="2.5" />
+              <ellipse cx="1200" cy="196" rx="7" ry="2.5" />
+            </g>
+          </g>
+
+          <!-- ============================================================ -->
+          <!-- LAYER 4: STAGE 04 - BESPOKE FLOORING (HERRINGBONE & MARBLE)  -->
+          <!-- ============================================================ -->
+          <g id="stage-layer-4" class="reno-layer" style="opacity: 0;">
+            <!-- Warm European Oak Herringbone Floor Plane -->
+            <polygon points="440,740 1480,740 1920,1080 0,1080" fill="url(#oakFloorBase)" />
+            <polygon points="440,740 1480,740 1920,1080 0,1080" fill="url(#herringbonePattern)" opacity="0.65" />
+
+            <!-- Bookmatched Calacatta Marble Perimeter Border & Hearth Inlay -->
+            <polygon points="440,740 1480,740 1565,805 355,805" fill="url(#calacattaMarble)" />
+            <!-- Subtle Calacatta Marble Veining -->
+            <path d="M 460,755 Q 620,780 790,748 T 1180,775 T 1490,760" fill="none" stroke="#C9C0B1" stroke-width="2" opacity="0.6" />
+            <path d="M 520,795 Q 840,760 1050,790 T 1420,785" fill="none" stroke="#D5CBB8" stroke-width="1.2" opacity="0.7" />
+
+            <!-- Champagne Brass Threshold Strip between Marble & Herringbone Oak -->
+            <line x1="355" y1="805" x2="1565" y2="805" stroke="#C5A880" stroke-width="3" />
+
+            <!-- Natural Window Daylight Reflections on Polished Floor -->
+            <polygon points="95,910 230,805 880,960 490,1080" fill="rgba(255, 252, 245, 0.16)" />
+            <polygon points="285,785 400,740 990,855 780,920" fill="rgba(255, 252, 245, 0.12)" />
+          </g>
+
+          <!-- ============================================================ -->
+          <!-- LAYER 5: STAGE 05 - CUSTOM MILLWORK, MOLDINGS & DRAPERY      -->
+          <!-- ============================================================ -->
+          <g id="stage-layer-5" class="reno-layer" style="opacity: 0;">
+            <!-- Left & Right Fluted Warm Walnut Accent Wall Panels -->
+            <rect x="458" y="225" width="175" height="495" fill="url(#flutedWalnut)" />
+            <rect x="458" y="225" width="175" height="495" fill="none" stroke="#C5A880" stroke-width="1.5" />
+
+            <rect x="1287" y="225" width="175" height="495" fill="url(#flutedWalnut)" />
+            <rect x="1287" y="225" width="175" height="495" fill="none" stroke="#C5A880" stroke-width="1.5" />
+
+            <!-- Built-in Architectural Arch/Minimalist Shelving Niches in Fluted Panels -->
+            <!-- Left Niche -->
+            <rect x="486" y="310" width="118" height="310" rx="59" fill="#3B291D" stroke="#C5A880" stroke-width="1.2" />
+            <line x1="486" y1="425" x2="604" y2="425" stroke="#C5A880" stroke-width="2" />
+            <line x1="486" y1="525" x2="604" y2="525" stroke="#C5A880" stroke-width="2" />
+            <!-- Right Niche -->
+            <rect x="1316" y="310" width="118" height="310" rx="59" fill="#3B291D" stroke="#C5A880" stroke-width="1.2" />
+            <line x1="1316" y1="425" x2="1434" y2="425" stroke="#C5A880" stroke-width="2" />
+            <line x1="1316" y1="525" x2="1434" y2="525" stroke="#C5A880" stroke-width="2" />
+
+            <!-- Classic Parisian Haussmann Boiserie Wall Moldings (Center Back Wall & Right Wall) -->
+            <g fill="none" stroke="#CFC8BC" stroke-width="2.5">
+              <!-- Outer Center Frame -->
+              <rect x="665" y="240" width="590" height="360" />
+              <!-- Inner Center Frame -->
+              <rect x="680" y="255" width="560" height="330" stroke="#FFFFFF" stroke-width="1.2" />
+              <!-- Lower Wainscoting Panels -->
+              <rect x="665" y="622" width="280" height="88" />
+              <rect x="975" y="622" width="280" height="88" />
+              <!-- Right Perspective Wall Boiserie Panels -->
+              <polygon points="1530,245 1840,115 1840,680 1530,635" stroke="#BFB7A9" stroke-width="2" />
+              <polygon points="1548,265 1820,148 1820,655 1548,615" stroke="#EAE4DA" stroke-width="1" />
+            </g>
+
+            <!-- Floor-to-Ceiling Sheer Belgian Linen Drapery on Left Windows -->
+            <!-- Drapery Panel 1 (Far Left) -->
+            <path d="M 35,95 L 95,125 L 95,925 C 75,935 55,950 35,965 Z" fill="url(#linenCurtain)" />
+            <!-- Drapery Panel 2 (Between Windows) -->
+            <path d="M 210,175 L 280,206 L 280,805 C 255,815 235,825 210,835 Z" fill="url(#linenCurtain)" />
+            <!-- Drapery Panel 3 (Inner Left Corner) -->
+            <path d="M 382,250 L 432,212 L 432,742 C 415,752 398,762 382,768 Z" fill="url(#linenCurtain)" />
+            <!-- Vertical Pleat Lines on Drapery -->
+            <g stroke="#D2C9B8" stroke-width="1" opacity="0.7">
+              <line x1="52" y1="105" x2="52" y2="950" />
+              <line x1="74" y1="115" x2="74" y2="935" />
+              <line x1="232" y1="185" x2="232" y2="825" />
+              <line x1="258" y1="196" x2="258" y2="812" />
+              <line x1="402" y1="235" x2="402" y2="758" />
+              <line x1="418" y1="222" x2="418" y2="748" />
+            </g>
+          </g>
+
+          <!-- ============================================================ -->
+          <!-- LAYER 6: STAGE 06 - CURATED LUXURY FURNITURE                 -->
+          <!-- ============================================================ -->
+          <g id="stage-layer-6" class="reno-layer" style="opacity: 0;">
+            <!-- Ambient Occlusion Contact Shadows on Floor -->
+            <ellipse cx="960" cy="808" rx="340" ry="34" fill="rgba(28, 24, 20, 0.35)" />
+            <ellipse cx="535" cy="885" rx="135" ry="26" fill="rgba(28, 24, 20, 0.38)" />
+            <ellipse cx="1395" cy="885" rx="135" ry="26" fill="rgba(28, 24, 20, 0.38)" />
+            <ellipse cx="960" cy="915" rx="225" ry="30" fill="rgba(28, 24, 20, 0.42)" />
+
+            <!-- Bespoke Curved Ivory Bouclé Sofa (Center Salon) -->
+            <!-- Sofa Curved Backrest -->
+            <path d="M 650,745 C 650,655 750,640 960,640 C 1170,640 1270,655 1270,745 L 1255,795 L 665,795 Z" fill="url(#boucleSofaGrad)" stroke="#D5CCB9" stroke-width="1.5" />
+            <!-- Left & Right Sculptural Curved Arms -->
+            <path d="M 635,725 C 635,690 685,690 695,735 L 695,802 C 660,805 635,795 635,765 Z" fill="url(#boucleCushionGrad)" stroke="#CFC6B4" stroke-width="1.2" />
+            <path d="M 1285,725 C 1285,690 1235,690 1225,735 L 1225,802 C 1260,805 1285,795 1285,765 Z" fill="url(#boucleCushionGrad)" stroke="#CFC6B4" stroke-width="1.2" />
+            <!-- 3 Plush Bouclé Seat Cushions -->
+            <rect x="682" y="732" width="186" height="52" rx="22" fill="url(#boucleCushionGrad)" stroke="#D2C8B6" stroke-width="1.2" />
+            <rect x="868" y="732" width="184" height="52" rx="22" fill="url(#boucleCushionGrad)" stroke="#D2C8B6" stroke-width="1.2" />
+            <rect x="1052" y="732" width="186" height="52" rx="22" fill="url(#boucleCushionGrad)" stroke="#D2C8B6" stroke-width="1.2" />
+            <!-- Sofa Recessed Brushed Brass Plinth Base -->
+            <rect x="660" y="784" width="600" height="16" rx="6" fill="#3D352E" />
+            <line x1="665" y1="798" x2="1255" y2="798" stroke="#C5A880" stroke-width="3" />
+            <!-- Accent Cashmere Throw Pillows -->
+            <rect x="705" y="685" width="62" height="52" rx="14" transform="rotate(-8 736 711)" fill="#D8CBB8" stroke="#BFA98E" stroke-width="1" />
+            <rect x="752" y="694" width="54" height="46" rx="12" transform="rotate(5 779 717)" fill="#C5A880" />
+            <rect x="1148" y="685" width="62" height="52" rx="14" transform="rotate(8 1179 711)" fill="#D8CBB8" stroke="#BFA98E" stroke-width="1" />
+
+            <!-- Left Pierre Jeanneret / Sculptural Teak & Bouclé Lounge Chair -->
+            <g transform="translate(415, 735)">
+              <!-- Sculptural Compass Teak Legs -->
+              <polygon points="35,145 75,65 92,65 55,148" fill="#4A2F1D" />
+              <polygon points="205,145 165,65 148,65 185,148" fill="#3B2416" />
+              <!-- Upholstered Seat & Angled Backrest -->
+              <path d="M 40,35 C 45,5 165,10 175,45 L 195,95 L 30,95 Z" fill="url(#boucleSofaGrad)" stroke="#C9BFA9" stroke-width="1.5" />
+              <rect x="30" y="82" width="185" height="38" rx="16" fill="url(#boucleCushionGrad)" stroke="#C9BFA9" stroke-width="1.5" />
+              <!-- Teak Armrests -->
+              <path d="M 22,62 L 212,68 L 212,78 L 22,72 Z" fill="#5C3B24" />
+            </g>
+
+            <!-- Right Sculptural Teak & Bouclé Lounge Chair -->
+            <g transform="translate(1275, 735)">
+              <polygon points="35,145 75,65 92,65 55,148" fill="#4A2F1D" />
+              <polygon points="205,145 165,65 148,65 185,148" fill="#3B2416" />
+              <path d="M 65,45 C 75,10 195,5 200,35 L 210,95 L 45,95 Z" fill="url(#boucleSofaGrad)" stroke="#C9BFA9" stroke-width="1.5" />
+              <rect x="25" y="82" width="185" height="38" rx="16" fill="url(#boucleCushionGrad)" stroke="#C9BFA9" stroke-width="1.5" />
+              <path d="M 28,68 L 218,62 L 218,72 L 28,78 Z" fill="#5C3B24" />
+            </g>
+
+            <!-- Monolithic Roman Travertine & Nero Marquina Coffee Table (Foreground Center) -->
+            <!-- Cylindrical Fluted Travertine Pedestal Bases -->
+            <rect x="795" y="858" width="76" height="54" rx="10" fill="#BFB29B" stroke="#9E9078" stroke-width="1" />
+            <rect x="1049" y="858" width="76" height="54" rx="10" fill="#B5A790" stroke="#9E9078" stroke-width="1" />
+            <!-- Nero Marquina Black Marble Accent Block -->
+            <ellipse cx="1095" cy="885" rx="68" ry="20" fill="#1F1E1D" stroke="#4D4944" stroke-width="1.5" />
+            <!-- Thick Honed Travertine Tabletop Slab -->
+            <ellipse cx="960" cy="852" rx="228" ry="36" fill="#C4B69E" />
+            <ellipse cx="960" cy="844" rx="228" ry="34" fill="url(#travertineTable)" stroke="#DFD5C3" stroke-width="1.5" />
+          </g>
+
+          <!-- ============================================================ -->
+          <!-- LAYER 7: STAGE 07 - ART, SILK RUG, SCULPTURES & BOTANICALS   -->
+          <!-- ============================================================ -->
+          <g id="stage-layer-7" class="reno-layer" style="opacity: 0;">
+            <!-- Hand-Knotted Silk-Wool Area Rug (Rendered in perspective with subtle border) -->
+            <!-- Note: Visual rug frame around and beneath the seating group -->
+            <polygon points="480,795 1440,795 1690,995 230,995" fill="none" stroke="#DFD7C8" stroke-width="14" opacity="0.85" />
+            <polygon points="495,802 1425,802 1660,985 260,985" fill="none" stroke="#C5A880" stroke-width="2" stroke-dasharray="10 5" opacity="0.8" />
+
+            <!-- Oversized Minimalist Textured Abstract Art on Center Boiserie Wall -->
+            <g transform="translate(755, 278)">
+              <!-- Bronze Gallery Frame -->
+              <rect x="0" y="0" width="410" height="280" fill="#F4F0E8" stroke="#7A6348" stroke-width="6" />
+              <!-- Textured Bas-Relief Minimalist Composition -->
+              <rect x="18" y="18" width="374" height="244" fill="#EAE4D8" />
+              <path d="M 18,190 Q 140,95 260,165 T 392,120 L 392,262 L 18,262 Z" fill="#D8CEBE" />
+              <circle cx="275" cy="105" r="58" fill="#C5A880" opacity="0.45" />
+              <path d="M 65,225 C 125,85 245,65 335,215" fill="none" stroke="#2B2927" stroke-width="3.5" stroke-linecap="round" />
+              <path d="M 105,60 L 105,215" fill="none" stroke="#8C7355" stroke-width="2" />
+            </g>
+
+            <!-- Curated Ceramics & Sculptures inside the Fluted Walnut Niches -->
+            <!-- Left Niche Objects -->
+            <ellipse cx="545" cy="405" rx="18" ry="20" fill="#E8E1D5" />
+            <rect x="515" y="502" width="58" height="20" fill="#C5A880" />
+            <circle cx="545" cy="595" r="24" fill="#D5CBB8" />
+            <!-- Right Niche Objects -->
+            <path d="M 1360,422 C 1355,380 1395,380 1390,422 Z" fill="#E8E1D5" />
+            <circle cx="1375" cy="500" r="20" fill="#C5A880" />
+            <rect x="1345" y="598" width="62" height="18" fill="#dfd7c8" />
+
+            <!-- Coffee Table Styling: Hardcover Art Books, Ikebana Vessel & Sculptural Bowl -->
+            <g transform="translate(835, 815)">
+              <!-- Stack of Large Architecture Monographs -->
+              <polygon points="0,24 85,16 105,28 20,36" fill="#2A2826" stroke="#C5A880" stroke-width="0.8" />
+              <polygon points="5,18 82,11 100,22 22,29" fill="#F5F2EB" stroke="#C7BFA8" stroke-width="0.8" />
+              <!-- Travertine Ikebana Bowl & Coral Branch -->
+              <ellipse cx="165" cy="22" rx="34" ry="12" fill="#EAE3D5" stroke="#B8AC96" stroke-width="1" />
+              <path d="M 165,18 Q 180,-15 205,-22 M 175,-2 Q 155,-20 145,-28" fill="none" stroke="#5A4634" stroke-width="2" stroke-linecap="round" />
+              <circle cx="205" cy="-22" r="4" fill="#F5F0E6" />
+              <circle cx="145" cy="-28" r="3.5" fill="#F5F0E6" />
+            </g>
+
+            <!-- Tall Sculptural Mediterranean Olive Tree in Hand-Carved Limestone Planter (Right Corner) -->
+            <g transform="translate(1545, 360)">
+              <!-- Carve Limestone Vessel -->
+              <path d="M 55,345 L 155,345 L 140,465 C 125,478 85,478 70,465 Z" fill="#DFD8CA" stroke="#B8AFA0" stroke-width="2" />
+              <ellipse cx="105" cy="345" rx="50" ry="10" fill="#6E5A47" />
+              <!-- Sculptural Gnarled Olive Trunk & Branches -->
+              <path d="M 105,345 C 102,280 120,230 95,165 C 80,120 45,90 25,65" fill="none" stroke="#594636" stroke-width="9" stroke-linecap="round" />
+              <path d="M 102,225 C 130,175 165,140 190,105" fill="none" stroke="#594636" stroke-width="6" stroke-linecap="round" />
+              <path d="M 95,165 C 105,110 125,75 135,40" fill="none" stroke="#594636" stroke-width="5" stroke-linecap="round" />
+              <!-- Silvery-Sage Olive Foliage Clusters -->
+              <g fill="#6E7B68" opacity="0.92">
+                <ellipse cx="25" cy="60" rx="48" ry="26" transform="rotate(-15 25 60)" />
+                <ellipse cx="75" cy="85" rx="52" ry="28" transform="rotate(10 75 85)" />
+                <ellipse cx="135" cy="42" rx="56" ry="30" transform="rotate(-8 135 42)" />
+                <ellipse cx="188" cy="98" rx="50" ry="26" transform="rotate(18 188 98)" />
+                <ellipse cx="125" cy="125" rx="45" ry="24" />
+              </g>
+              <g fill="#8FA088" opacity="0.75">
+                <ellipse cx="35" cy="52" rx="35" ry="18" />
+                <ellipse cx="142" cy="35" rx="40" ry="20" />
+                <ellipse cx="180" cy="92" rx="34" ry="16" />
+              </g>
+            </g>
+          </g>
+
+          <!-- ============================================================ -->
+          <!-- LAYER 8: STAGE 08 - 2700K ILLUMINATION & FINAL REVEAL        -->
+          <!-- ============================================================ -->
+          <g id="stage-layer-8" class="reno-layer" style="opacity: 0;">
+            <!-- Warm 2700K Ambient Room Glow Overlay -->
+            <rect x="0" y="0" width="1920" height="1080" fill="url(#chandelierGlow)" style="mix-blend-mode: screen;" />
+            <ellipse cx="960" cy="855" rx="750" ry="220" fill="url(#floorWarmPool)" style="mix-blend-mode: screen;" />
+
+            <!-- Hidden Perimeter LED Cove Lighting inside Ceiling Coffer -->
+            <polygon points="240,28 1680,28 1645,48 275,48" fill="url(#coveGlowTop)" />
+            <polygon points="530,185 1390,185 1375,168 545,168" fill="url(#coveGlowTop)" />
+            <line x1="255" y1="34" x2="1665" y2="34" stroke="#FFE6B5" stroke-width="4" opacity="0.95" />
+            <line x1="538" y1="180" x2="1382" y2="180" stroke="#FFE6B5" stroke-width="3.5" opacity="0.9" />
+            <line x1="255" y1="34" x2="538" y2="180" stroke="#FFE6B5" stroke-width="3" opacity="0.85" />
+            <line x1="1665" y1="34" x2="1382" y2="180" stroke="#FFE6B5" stroke-width="3" opacity="0.85" />
+
+            <!-- Backlit Warm LED Glow Inside Both Walnut Shelving Niches -->
+            <rect x="486" y="310" width="118" height="310" rx="59" fill="rgba(255, 208, 132, 0.32)" stroke="#FFD89B" stroke-width="2" />
+            <rect x="1316" y="310" width="118" height="310" rx="59" fill="rgba(255, 208, 132, 0.32)" stroke="#FFD89B" stroke-width="2" />
+
+            <!-- Illuminated Architectural Downlights + Light Cones on Walls -->
+            <g fill="#FFF5DF">
+              <ellipse cx="420" cy="115" rx="10" ry="4" />
+              <ellipse cx="455" cy="128" rx="9" ry="3.5" />
+              <ellipse cx="1500" cy="115" rx="10" ry="4" />
+              <ellipse cx="1465" cy="128" rx="9" ry="3.5" />
+              <ellipse cx="720" cy="196" rx="7" ry="2.5" />
+              <ellipse cx="1200" cy="196" rx="7" ry="2.5" />
+            </g>
+            <!-- Picture Frame Warm Wash Glow on Abstract Art -->
+            <polygon points="755,278 1165,278 1220,590 700,590" fill="rgba(255, 224, 168, 0.14)" />
+
+            <!-- Sculptural Brushed Brass & Spanish Alabaster Chandelier (Center Ceiling) -->
+            <g transform="translate(960, 105)">
+              <!-- Ceiling Canopy & Slender Brass Suspension Rods -->
+              <ellipse cx="0" cy="0" rx="36" ry="7" fill="#C5A880" />
+              <line x1="-18" y1="0" x2="-18" y2="135" stroke="#C5A880" stroke-width="2.5" />
+              <line x1="18" y1="0" x2="18" y2="135" stroke="#C5A880" stroke-width="2.5" />
+              <line x1="0" y1="0" x2="0" y2="165" stroke="#C5A880" stroke-width="2" />
+              <!-- Upper & Lower Sculptural Brass Rings -->
+              <ellipse cx="0" cy="135" rx="185" ry="24" fill="none" stroke="#C5A880" stroke-width="5" />
+              <ellipse cx="0" cy="162" rx="130" ry="16" fill="none" stroke="#DFC39D" stroke-width="3.5" />
+              <!-- Glowing Spanish Alabaster Light Orbs / Cylinders -->
+              <g fill="#FFF7E4" stroke="#EED2A3" stroke-width="1.5">
+                <circle cx="-185" cy="135" r="14" />
+                <circle cx="-130" cy="152" r="15" />
+                <circle cx="-65" cy="158" r="16" />
+                <circle cx="0" cy="162" r="18" />
+                <circle cx="65" cy="158" r="16" />
+                <circle cx="130" cy="152" r="15" />
+                <circle cx="185" cy="135" r="14" />
+                <circle cx="-110" cy="118" r="12" />
+                <circle cx="110" cy="118" r="12" />
+              </g>
+              <!-- Halo Bloom Around Chandelier -->
+              <ellipse cx="0" cy="148" rx="240" ry="65" fill="rgba(255, 226, 173, 0.28)" />
+            </g>
+          </g>
+        </svg>
+
+        <!-- Atmospheric Vignette for Text Legibility -->
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/55"></div>
+
+        <!-- ================================================================ -->
+        <!-- STAGE 08 CENTER STUDIO BRAND REVEAL OVERLAY (Appears 87.5%-100%) -->
+        <!-- ================================================================ -->
+        <div id="stage-8-brand-reveal" class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center text-center px-6 transition-all duration-500 opacity-0 translate-y-6">
+          <div class="bg-obsidian/70 backdrop-blur-md border border-champagne/40 px-8 py-10 md:px-16 md:py-12 rounded-2xl max-w-3xl shadow-2xl pointer-events-auto">
+            <p class="text-[11px] md:text-xs uppercase tracking-widest2 text-champagne mb-3">
+              Est. 1998 • Mumbai • New Delhi • London • Dubai
+            </p>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl text-alabaster font-light tracking-wider mb-4">
+              KHANNA <span class="text-champagne italic font-normal">&amp;</span> VÉRA
+            </h1>
+            <div class="w-24 h-[1px] bg-champagne mx-auto mb-4"></div>
+            <p class="font-serif italic text-lg sm:text-2xl text-stonewarm/90 mb-8 max-w-xl mx-auto">
+              “Transforming raw architectural volume into timeless sanctuaries of quiet luxury.”
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+              <button onclick="scrollToPortfolio()" class="px-8 py-3.5 bg-champagne hover:bg-champagnedark text-obsidian font-medium text-xs uppercase tracking-editorial rounded-full transition-all duration-300 shadow-lg">
+                Enter Editorial Portfolio ↓
+              </button>
+              <button onclick="scrollToStage(0)" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-alabaster border border-white/25 text-xs uppercase tracking-editorial rounded-full transition-all duration-300">
+                Replay Transformation
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================================================================ -->
+      <!-- HERO HUD: TOP BAR (Brand Mark & Overall Progress Percentage)     -->
+      <!-- ================================================================ -->
+      <div class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-12 py-6 pointer-events-none">
+        <div class="flex items-center gap-4 pointer-events-auto">
+          <span class="font-serif text-xl md:text-2xl tracking-widest text-alabaster">K &amp; V</span>
+          <span class="hidden sm:inline-block h-4 w-[1px] bg-champagne/40"></span>
+          <span class="hidden sm:inline-block text-[11px] uppercase tracking-editorial text-champagne">
+            Scroll-to-Renovate Experience
+          </span>
+        </div>
+
+        <div class="flex items-center gap-5 bg-obsidian/65 backdrop-blur-md border border-white/15 px-4 py-2 rounded-full pointer-events-auto">
+          <span class="text-[11px] uppercase tracking-widest text-stonewarm/70">Completion</span>
+          <div class="w-24 sm:w-32 h-1.5 bg-white/15 rounded-full overflow-hidden">
+            <div id="hud-progress-bar" class="h-full bg-champagne transition-all duration-150" style="width: 6%;"></div>
+          </div>
+          <span id="hud-progress-pct" class="font-mono text-xs text-champagne font-semibold w-9 text-right">0%</span>
+        </div>
+      </div>
+
+      <!-- ================================================================ -->
+      <!-- HERO HUD: BOTTOM-LEFT ACTIVE STAGE ARCHITECTURAL SPEC CARD       -->
+      <!-- ================================================================ -->
+      <div class="absolute bottom-6 left-6 md:bottom-10 md:left-12 z-20 max-w-md lg:max-w-xl pointer-events-auto">
+        <div class="bg-obsidian/75 backdrop-blur-md border border-white/15 p-5 sm:p-7 rounded-2xl shadow-2xl">
+          <div class="flex items-center justify-between gap-3 mb-2">
+            <span id="hud-stage-pill" class="inline-flex items-center gap-2 text-[11px] uppercase tracking-editorial text-champagne font-medium">
+              <span class="w-2 h-2 rounded-full bg-champagne animate-pulse"></span>
+              STAGE 01 OF 08 • SCROLL 1
+            </span>
+            <span id="hud-stage-code" class="text-[11px] font-mono text-stonewarm/50 uppercase">
+              SPEC // ARCH-01
+            </span>
+          </div>
+
+          <h2 id="hud-stage-title" class="font-serif text-2xl sm:text-4xl text-alabaster font-normal tracking-wide mb-2">
+            01 / Raw Architectural Space
+          </h2>
+
+          <p id="hud-stage-desc" class="text-xs sm:text-sm text-stonewarm/80 leading-relaxed mb-4">
+            Un-renovated structural concrete shell and exposed heritage brickwork. Laser survey lines establish axis symmetry across the 4.2-meter high salon volume.
+          </p>
+
+          <!-- Material Tags & Prev/Next Quick Step Controls -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-white/10">
+            <div id="hud-stage-materials" class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/10 text-stonewarm">Exposed Brick</span>
+              <span class="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/10 text-stonewarm">Board-Formed Concrete</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button onclick="stepStage(-1)" title="Previous Stage" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-champagne hover:text-obsidian text-alabaster text-xs transition">
+                ← Prev
+              </button>
+              <button onclick="stepStage(1)" title="Next Stage" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-champagne hover:text-obsidian text-alabaster text-xs transition">
+                Next →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================================================================ -->
+      <!-- HERO HUD: RIGHT SIDE 8-STEP VERTICAL PROGRESS BAR (01 to 08)     -->
+      <!-- ================================================================ -->
+      <div class="absolute right-4 sm:right-8 md:right-12 top-1/2 -translate-y-1/2 z-20 flex flex-col items-end pointer-events-auto">
+        <div class="relative bg-obsidian/65 backdrop-blur-md border border-white/15 py-4 px-3 rounded-2xl flex flex-col items-center gap-3">
+          <!-- Vertical Track Line -->
+          <div class="absolute top-6 bottom-6 left-1/2 -translate-x-1/2 w-[1px] bg-white/15 -z-10">
+            <div id="vertical-gold-line" class="w-full bg-champagne transition-all duration-200" style="height: 0%;"></div>
+          </div>
+
+          <!-- 8 Interactive Stage Nodes -->
+          <button onclick="scrollToStage(0)" data-stage-node="0" class="stage-node group relative flex items-center justify-center w-8 h-8 rounded-full text-[11px] font-medium transition-all duration-300 bg-champagne text-obsidian shadow-md">
+            01
+            <span class="pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity absolute right-11 whitespace-nowrap bg-obsidian/90 text-alabaster text-xs px-3 py-1.5 rounded-lg border border-champagne/40">
+              01 / Raw Architectural Space
+            </span>
+          </button>
+          <button onclick="scrollToStage(1)" data-stage-node="1" class="stage-node group relative flex items-center justify-center w-8 h-8 rounded-full text-[11px] font-medium transition-all duration-300 bg-obsidian/80 text-stonewarm/60 border border-white/20 hover:border-champagne">
+            02
+            <span class="pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity absolute right-11 whitespace-nowrap bg-obsidian/90 text-alabaster text-xs px-3 py-1.5 rounded-lg border border-champagne/40">
+              02 / Wall Finishes &amp; Base Coat
+            </span>
+          </button>
+          <button onclick="scrollToStage(2)" data-stage-node="2" class="stage-node group relative flex items-center justify-center w-8 h-8 rounded-full text-[11px] font-medium transition-all duration-300 bg-obsidian/80 text-stonewarm/60 border border-white/20 hover:border-champagne">
+            03
+            <span class="pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity absolute right-11 whitespace-nowrap bg-obsidian/90 text-alabaster text-xs px-3 py-1.5 rounded-lg border border-champagne/40">
+              03 / Ceiling Architecture
+            </span>
+          </button>
+          <button onclick="scrollToStage(3)" data-stage-node="3" class="stage-node group relative flex items-center justify-center w-8 h-8 rounded-full text-[11px] font-medium transition-all duration-300 bg-obsidian/80 text-stonewarm/60 border border-white/20 hover:border-champagne">
+            04
+            <span class="pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity absolute right-11 whitespace-nowrap bg-obsidian/90 text-alabaster text-xs px-3 py-1.5 rounded-lg border border-champagne/40">
+              04 / Bespoke Flooring
+            </span>
+          </button>
+          <button onclick="scrollToStage(4)" data-stage-node="4" class="stage-node group relative flex items-center justify-center w-8 h-8 rounded-full text-[11px] font-medium transition-all duration-300 bg-obsidian/80 text-stonewarm/60 border border-white/20 hover:border-champagne">
+            05
+            <span class="pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity absolute right-11 whitespace-nowrap bg-obsidian/90 text-alabaster text-xs px-3 py-1.5 rounded-lg border border-champagne/40">
+              05 / Custom Millwork &amp; Drapery
+            </span>
+          </button>
+          <button onclick="scrollToStage(5)" data-stage-node="5" class="stage-node group relative flex items-center justify-center w-8 h-8 rounded-full text-[11px] font-medium transition-all duration-300 bg-obsidian/80 text-stonewarm/60 border border-white/20 hover:border-champagne">
+            06
+            <span class="pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity absolute right-11 whitespace-nowrap bg-obsidian/90 text-alabaster text-xs px-3 py-1.5 rounded-lg border border-champagne/40">
+              06 / Curated Luxury Furniture
+            </span>
+          </button>
+          <button onclick="scrollToStage(6)" data-stage-node="6" class="stage-node group relative flex items-center justify-center w-8 h-8 rounded-full text-[11px] font-medium transition-all duration-300 bg-obsidian/80 text-stonewarm/60 border border-white/20 hover:border-champagne">
+            07
+            <span class="pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity absolute right-11 whitespace-nowrap bg-obsidian/90 text-alabaster text-xs px-3 py-1.5 rounded-lg border border-champagne/40">
+              07 / Art &amp; Styling
+            </span>
+          </button>
+          <button onclick="scrollToStage(7)" data-stage-node="7" class="stage-node group relative flex items-center justify-center w-8 h-8 rounded-full text-[11px] font-medium transition-all duration-300 bg-obsidian/80 text-stonewarm/60 border border-white/20 hover:border-champagne">
+            08
+            <span class="pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity absolute right-11 whitespace-nowrap bg-obsidian/90 text-alabaster text-xs px-3 py-1.5 rounded-lg border border-champagne/40">
+              08 / Illumination &amp; Final Reveal
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================================================================ -->
+      <!-- HERO HUD: BOTTOM-RIGHT "SKIP INTRO ↓" BUTTON                     -->
+      <!-- ================================================================ -->
+      <div class="absolute bottom-6 right-6 md:bottom-10 md:right-12 z-20 flex items-center gap-3 pointer-events-auto">
+        <div class="hidden lg:flex items-center gap-2 text-xs text-stonewarm/70 bg-obsidian/60 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/10">
+          <span class="inline-block w-2 h-2 rounded-full bg-champagne animate-ping"></span>
+          <span>Scroll mouse wheel to renovate room</span>
+        </div>
+        <button onclick="scrollToPortfolio()" class="group flex items-center gap-2.5 bg-alabaster hover:bg-champagne text-charcoal hover:text-obsidian px-5 py-3 rounded-full text-xs uppercase tracking-editorial font-medium transition-all duration-300 shadow-xl">
+          <span>Skip Intro</span>
+          <span class="transform group-hover:translate-y-0.5 transition-transform">↓</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- PART 2: MONICA KHANNA STYLE EDITORIAL PORTFOLIO                       -->
+  <!-- ===================================================================== -->
+  <div id="editorial-portfolio-start" class="relative bg-alabaster">
+
+    <!-- STICKY MINIMAL DUAL-TIER NAVBAR -->
+    <header id="sticky-navbar" class="sticky top-0 z-40 w-full bg-alabaster/95 backdrop-blur-md border-b border-charcoal/10 transition-all duration-300">
+      <!-- Primary Tier: Centered Brand Logo & Editorial Navigation -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-4 pb-3 flex flex-col items-center">
+        <!-- Studio Brand Name -->
+        <a href="#editorial-portfolio-start" class="text-center group">
+          <span class="block font-serif text-2xl sm:text-3xl md:text-4xl tracking-[0.28em] text-charcoal font-normal">
+            KHANNA &amp; VÉRA
+          </span>
+          <span class="block text-[9px] sm:text-[10px] uppercase tracking-[0.35em] text-taupe mt-0.5 group-hover:text-champagnedark transition-colors">
+            Interior Architecture &amp; Bespoke Styling
+          </span>
+        </a>
+
+        <!-- Primary Navigation Links -->
+        <nav aria-label="Primary Navigation" class="mt-3 flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-9 gap-y-2 text-[11px] sm:text-xs uppercase tracking-editorial text-charcoal/80">
+          <a href="#hero-renovation-track" class="hover:text-champagnedark transition-colors py-1">Home (8-Stage Intro)</a>
+          <a href="#philosophy-section" class="hover:text-champagnedark transition-colors py-1">Philosophy</a>
+          <a href="#section-apartments" class="hover:text-champagnedark transition-colors py-1 font-medium text-charcoal">Portfolio</a>
+          <a href="#section-sourcing" class="hover:text-champagnedark transition-colors py-1">Product Sourcing</a>
+          <a href="#section-press" class="hover:text-champagnedark transition-colors py-1">Press</a>
+          <a href="#section-blogs" class="hover:text-champagnedark transition-colors py-1">Blogs</a>
+          <a href="#section-estimator" class="hover:text-champagnedark transition-colors py-1 text-champagnedark font-medium">Cost Estimator</a>
+          <a href="#section-contact" class="hover:text-champagnedark transition-colors py-1">About &amp; Contact</a>
+        </nav>
+      </div>
+
+      <!-- Secondary Sub-Navigation Bar: Jumping to the 4 Core Portfolio Pillars -->
+      <div class="w-full bg-stonewarm/90 border-t border-charcoal/10 py-2 px-4">
+        <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-[11px] uppercase tracking-widest text-taupe">
+          <a href="#section-apartments" data-pillar-link="apartments" class="pillar-nav-link hover:text-charcoal transition-colors px-2 py-0.5 rounded">
+            Apartments
+          </a>
+          <span class="text-champagne">•</span>
+          <a href="#section-farmhouses" data-pillar-link="farmhouses" class="pillar-nav-link hover:text-charcoal transition-colors px-2 py-0.5 rounded">
+            Farmhouses &amp; Villas
+          </a>
+          <span class="text-champagne">•</span>
+          <a href="#section-offices" data-pillar-link="offices" class="pillar-nav-link hover:text-charcoal transition-colors px-2 py-0.5 rounded">
+            Office Interiors
+          </a>
+          <span class="text-champagne">•</span>
+          <a href="#section-hospitality" data-pillar-link="hospitality" class="pillar-nav-link hover:text-charcoal transition-colors px-2 py-0.5 rounded">
+            Hospitality
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =================================================================== -->
+    <!-- PHILOSOPHY & 3 PILLARS SECTION                                      -->
+    <!-- =================================================================== -->
+    <section id="philosophy-section" class="py-20 sm:py-28 px-6 sm:px-10 max-w-7xl mx-auto">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-xs uppercase tracking-widest2 text-champagnedark mb-4">The Studio Ethos</p>
+        <blockquote class="font-serif italic text-3xl sm:text-5xl md:text-6xl text-charcoal leading-[1.18] font-light mb-8">
+          “Good design yearns for boundless style that is underlined by simplicity.”
+        </blockquote>
+        <div class="w-20 h-[1px] bg-champagne mx-auto mb-8"></div>
+        <p class="text-taupe text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-light">
+          Inspired by the timeless editorial mastery of Monica Khanna Designs, our practice orchestrates architectural volume, rare natural stones, bespoke millwork, and collectible art. Every residence, private estate, corporate headquarters, and boutique hotel is conceived as a deeply personal narrative of quiet opulence.
+        </p>
+      </div>
+
+      <!-- 3 Animated Pillars Columns (Residential, Office Interiors, Hospitality) -->
+      <div class="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Pillar 1: Residential -->
+        <div class="group bg-stonewarm/70 border border-charcoal/10 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col">
+          <div class="relative h-72 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85"
+              onerror="this.src='https://placehold.co/800x600/F2EFE9/1C1C1C?text=Residential+Sanctuaries'"
+              alt="Luxury Residential Interiors"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute top-4 left-4 bg-alabaster/90 backdrop-blur-sm px-3.5 py-1 rounded-full text-[10px] uppercase tracking-editorial text-charcoal">
+              01 / Pillar I
+            </div>
+          </div>
+          <div class="p-8 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-3xl text-charcoal mb-3">Residential Sanctuaries</h3>
+              <p class="text-taupe text-sm leading-relaxed mb-6">
+                From sky-high sea-facing penthouses in Worli and Lutyens' bungalows to sprawling coastal villas in Alibaug and Goa—crafted with heirloom permanence.
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-charcoal/10">
+              <a href="#section-apartments" class="text-xs uppercase tracking-editorial text-charcoal group-hover:text-champagnedark font-medium inline-flex items-center gap-2">
+                <span>Explore Residences</span>
+                <span class="transition-transform group-hover:translate-x-1">→</span>
+              </a>
+              <span class="font-serif italic text-sm text-taupe">Apartments &amp; Villas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Office Interiors -->
+        <div class="group bg-stonewarm/70 border border-charcoal/10 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col">
+          <div class="relative h-72 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=85"
+              onerror="this.src='https://placehold.co/800x600/F2EFE9/1C1C1C?text=Office+Interiors'"
+              alt="Executive Office Interiors"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute top-4 left-4 bg-alabaster/90 backdrop-blur-sm px-3.5 py-1 rounded-full text-[10px] uppercase tracking-editorial text-charcoal">
+              02 / Pillar II
+            </div>
+          </div>
+          <div class="p-8 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-3xl text-charcoal mb-3">Office Interiors</h3>
+              <p class="text-taupe text-sm leading-relaxed mb-6">
+                Private family offices, financial suites, and executive headquarters that blend residential warmth with acoustic serenity and boardroom gravitas.
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-charcoal/10">
+              <a href="#section-offices" class="text-xs uppercase tracking-editorial text-charcoal group-hover:text-champagnedark font-medium inline-flex items-center gap-2">
+                <span>Explore Workspaces</span>
+                <span class="transition-transform group-hover:translate-x-1">→</span>
+              </a>
+              <span class="font-serif italic text-sm text-taupe">C-Suite &amp; Ateliers</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Hospitality -->
+        <div class="group bg-stonewarm/70 border border-charcoal/10 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col">
+          <div class="relative h-72 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85"
+              onerror="this.src='https://placehold.co/800x600/F2EFE9/1C1C1C?text=Luxury+Hospitality'"
+              alt="Boutique Hospitality Interiors"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute top-4 left-4 bg-alabaster/90 backdrop-blur-sm px-3.5 py-1 rounded-full text-[10px] uppercase tracking-editorial text-charcoal">
+              03 / Pillar III
+            </div>
+          </div>
+          <div class="p-8 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-3xl text-charcoal mb-3">Hospitality</h3>
+              <p class="text-taupe text-sm leading-relaxed mb-6">
+                Heritage palace restorations, luxury wellness resorts, private members' clubs, and destination fine-dining spaces designed for unforgettable theatre.
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-charcoal/10">
+              <a href="#section-hospitality" class="text-xs uppercase tracking-editorial text-charcoal group-hover:text-champagnedark font-medium inline-flex items-center gap-2">
+                <span>Explore Hospitality</span>
+                <span class="transition-transform group-hover:translate-x-1">→</span>
+              </a>
+              <span class="font-serif italic text-sm text-taupe">Hotels &amp; Fine Dining</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PORTFOLIO SECTION 1: APARTMENTS (Full-Bleed Parallax + Masonry)     -->
+    <!-- =================================================================== -->
+    <section id="section-apartments" class="scroll-mt-28">
+      <!-- Full-Width Fixed Parallax Image Banner -->
+      <div
+        class="parallax-banner h-[60vh] min-h-[420px] w-full flex items-center justify-center text-center px-6"
+        style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85');"
+      >
+        <div class="absolute inset-0 bg-obsidian/55"></div>
+        <div class="relative z-10 max-w-3xl">
+          <span class="block text-xs uppercase tracking-widest2 text-champagne mb-3">Portfolio Chapter I</span>
+          <h2 class="font-serif text-5xl sm:text-6xl md:text-7xl text-alabaster font-light tracking-wider mb-4">
+            Apartments &amp; Penthouses
+          </h2>
+          <div class="w-16 h-[1px] bg-champagne mx-auto"></div>
+        </div>
+      </div>
+
+      <!-- Editorial Description & Masonry Gallery -->
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <p class="font-serif italic text-2xl sm:text-3xl text-charcoal mb-4">
+            “Where curated stillness meets the vertical horizon of the city.”
+          </p>
+          <p class="text-taupe text-sm sm:text-base leading-relaxed font-light mb-6">
+            Our urban residences transform high-rise floor plates into intimate European salons. By pairing bookmatched Italian Calacatta marble with fluted walnut panelling, custom brass ironmongery, and museum-grade lighting, each apartment becomes a private gallery suspended above the metropolis.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-2 text-[11px] uppercase tracking-widest text-champagnedark">
+            <span class="px-3 py-1 bg-stonewarm rounded-full">Worli Sea Face, Mumbai</span>
+            <span class="px-3 py-1 bg-stonewarm rounded-full">Altamount Road</span>
+            <span class="px-3 py-1 bg-stonewarm rounded-full">Mayfair, London</span>
+            <span class="px-3 py-1 bg-stonewarm rounded-full">Downtown Dubai</span>
+          </div>
+        </div>
+
+        <!-- Masonry Grid dynamically populated by JS for clean Lightbox integration -->
+        <div id="gallery-apartments" class="grid grid-cols-1 md:grid-cols-12 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PORTFOLIO SECTION 2: FARMHOUSES & VILLAS                            -->
+    <!-- =================================================================== -->
+    <section id="section-farmhouses" class="scroll-mt-28 bg-stonewarm/50">
+      <div
+        class="parallax-banner h-[60vh] min-h-[420px] w-full flex items-center justify-center text-center px-6"
+        style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=85');"
+      >
+        <div class="absolute inset-0 bg-obsidian/55"></div>
+        <div class="relative z-10 max-w-3xl">
+          <span class="block text-xs uppercase tracking-widest2 text-champagne mb-3">Portfolio Chapter II</span>
+          <h2 class="font-serif text-5xl sm:text-6xl md:text-7xl text-alabaster font-light tracking-wider mb-4">
+            Farmhouses &amp; Villas
+          </h2>
+          <div class="w-16 h-[1px] bg-champagne mx-auto"></div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <p class="font-serif italic text-2xl sm:text-3xl text-charcoal mb-4">
+            “Indoor-outdoor pavilions where raw limestone, Burmese teak, and monsoon breezes converge.”
+          </p>
+          <p class="text-taupe text-sm sm:text-base leading-relaxed font-light mb-6">
+            Designed for unhurried generational living, our country estates and coastal villas celebrate tactile honesty. Courtyards framed by colonnades, hand-troweled lime plaster walls, bespoke rattan and bouclé lounging, and sunken conversation pits dissolve the boundary between architecture and landscape.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-2 text-[11px] uppercase tracking-widest text-champagnedark">
+            <span class="px-3 py-1 bg-alabaster rounded-full">Chhatarpur Farms, New Delhi</span>
+            <span class="px-3 py-1 bg-alabaster rounded-full">Awas, Alibaug</span>
+            <span class="px-3 py-1 bg-alabaster rounded-full">Assagao, Goa</span>
+            <span class="px-3 py-1 bg-alabaster rounded-full">Coonoor</span>
+          </div>
+        </div>
+
+        <div id="gallery-farmhouses" class="grid grid-cols-1 md:grid-cols-12 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PORTFOLIO SECTION 3: OFFICE INTERIORS                               -->
+    <!-- =================================================================== -->
+    <section id="section-offices" class="scroll-mt-28">
+      <div
+        class="parallax-banner h-[60vh] min-h-[420px] w-full flex items-center justify-center text-center px-6"
+        style="background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=85');"
+      >
+        <div class="absolute inset-0 bg-obsidian/60"></div>
+        <div class="relative z-10 max-w-3xl">
+          <span class="block text-xs uppercase tracking-widest2 text-champagne mb-3">Portfolio Chapter III</span>
+          <h2 class="font-serif text-5xl sm:text-6xl md:text-7xl text-alabaster font-light tracking-wider mb-4">
+            Office Interiors
+          </h2>
+          <div class="w-16 h-[1px] bg-champagne mx-auto"></div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <p class="font-serif italic text-2xl sm:text-3xl text-charcoal mb-4">
+            “Executive sanctuaries engineered for clarity of thought and understated authority.”
+          </p>
+          <p class="text-taupe text-sm sm:text-base leading-relaxed font-light mb-6">
+            Departing from sterile corporate convention, our private family offices, law chambers, and headquarters embrace residential refinement. Acoustic leather wall panelling, custom bronze and walnut boardroom tables, private art galleries, and hospitality-grade lounges define a new paradigm of leadership space.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-2 text-[11px] uppercase tracking-widest text-champagnedark">
+            <span class="px-3 py-1 bg-stonewarm rounded-full">BKC, Mumbai</span>
+            <span class="px-3 py-1 bg-stonewarm rounded-full">Nariman Point</span>
+            <span class="px-3 py-1 bg-stonewarm rounded-full">DIFC, Dubai</span>
+            <span class="px-3 py-1 bg-stonewarm rounded-full">Connaught Place, Delhi</span>
+          </div>
+        </div>
+
+        <div id="gallery-offices" class="grid grid-cols-1 md:grid-cols-12 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PORTFOLIO SECTION 4: HOSPITALITY                                    -->
+    <!-- =================================================================== -->
+    <section id="section-hospitality" class="scroll-mt-28 bg-stonewarm/50">
+      <div
+        class="parallax-banner h-[60vh] min-h-[420px] w-full flex items-center justify-center text-center px-6"
+        style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=85');"
+      >
+        <div class="absolute inset-0 bg-obsidian/55"></div>
+        <div class="relative z-10 max-w-3xl">
+          <span class="block text-xs uppercase tracking-widest2 text-champagne mb-3">Portfolio Chapter IV</span>
+          <h2 class="font-serif text-5xl sm:text-6xl md:text-7xl text-alabaster font-light tracking-wider mb-4">
+            Hospitality &amp; Fine Dining
+          </h2>
+          <div class="w-16 h-[1px] bg-champagne mx-auto"></div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <p class="font-serif italic text-2xl sm:text-3xl text-charcoal mb-4">
+            “Choreographing intimacy, grandeur, and sensory memory for the discerning traveller.”
+          </p>
+          <p class="text-taupe text-sm sm:text-base leading-relaxed font-light mb-6">
+            With a celebrated legacy in luxury hospitality, river cruisers, heritage palaces, and Michelin-calibre dining rooms, our studio crafts immersive worlds. Layered textiles, hand-blown Murano chandeliers, bespoke stone mosaic floors, and dramatic twilight illumination invite guests to linger.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-2 text-[11px] uppercase tracking-widest text-champagnedark">
+            <span class="px-3 py-1 bg-alabaster rounded-full">Udaipur Palace Suites</span>
+            <span class="px-3 py-1 bg-alabaster rounded-full">Jodhpur Heritage Resort</span>
+            <span class="px-3 py-1 bg-alabaster rounded-full">Colaba Members' Club</span>
+            <span class="px-3 py-1 bg-alabaster rounded-full">Brahmaputra Luxury Cruiser</span>
+          </div>
+        </div>
+
+        <div id="gallery-hospitality" class="grid grid-cols-1 md:grid-cols-12 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PRODUCT SOURCING & BESPOKE ATELIER SECTION                          -->
+    <!-- =================================================================== -->
+    <section id="section-sourcing" class="py-20 sm:py-28 px-6 sm:px-10 max-w-7xl mx-auto scroll-mt-28">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div>
+          <span class="text-xs uppercase tracking-widest2 text-champagnedark block mb-2">Global Curatorial Network</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-light">Bespoke Product Sourcing</h2>
+        </div>
+        <p class="text-taupe text-sm max-w-md font-light">
+          Direct ateliers in Milan, Como, Jaipur, and Paris allow us to procure rare architectural slabs, custom-loomed textiles, and numbered collectible editions exclusively for our clients.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Sourcing Card 1 -->
+        <div class="bg-stonewarm/60 border border-charcoal/10 rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="h-52 rounded-xl overflow-hidden mb-6">
+              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/700x500/F2EFE9/1C1C1C?text=Collectible+Furniture'" alt="European Collectible Furniture" class="w-full h-full object-cover" />
+            </div>
+            <span class="text-[10px] uppercase tracking-editorial text-champagnedark">Milan &amp; Paris Ateliers</span>
+            <h3 class="font-serif text-2xl text-charcoal mt-1 mb-2">Collectible Furniture &amp; Bouclé</h3>
+            <p class="text-taupe text-xs sm:text-sm leading-relaxed mb-6">
+              Custom-proportioned sofas upholstered in Loro Piana and Dedar bouclé, paired with sculptural bronze and solid travertine tables.
+            </p>
+          </div>
+          <button onclick="prefillEstimatorAndScroll('Ultra-Bespoke Collector\'s Edition')" class="text-left text-xs uppercase tracking-editorial text-charcoal hover:text-champagnedark font-medium pt-4 border-t border-charcoal/10">
+            Include in Cost Estimate →
+          </button>
+        </div>
+
+        <!-- Sourcing Card 2 -->
+        <div class="bg-stonewarm/60 border border-charcoal/10 rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="h-52 rounded-xl overflow-hidden mb-6">
+              <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/700x500/F2EFE9/1C1C1C?text=Carrara+Quarries'" alt="Italian Marble & Stone Quarries" class="w-full h-full object-cover" />
+            </div>
+            <span class="text-[10px] uppercase tracking-editorial text-champagnedark">Carrara &amp; Verona Quarries</span>
+            <h3 class="font-serif text-2xl text-charcoal mt-1 mb-2">Hand-Selected Monolithic Stone</h3>
+            <p class="text-taupe text-xs sm:text-sm leading-relaxed mb-6">
+              First-choice blocks of Calacatta Viola, Roman Travertine, and Rosso Levanto inspected in Italy and bookmatched for seamless architectural flow.
+            </p>
+          </div>
+          <button onclick="prefillEstimatorAndScroll('Classic Heritage & Bespoke Millwork')" class="text-left text-xs uppercase tracking-editorial text-charcoal hover:text-champagnedark font-medium pt-4 border-t border-charcoal/10">
+            Include in Cost Estimate →
+          </button>
+        </div>
+
+        <!-- Sourcing Card 3 -->
+        <div class="bg-stonewarm/60 border border-charcoal/10 rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="h-52 rounded-xl overflow-hidden mb-6">
+              <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/700x500/F2EFE9/1C1C1C?text=Artisanal+Lighting'" alt="Artisanal Chandeliers & Lighting" class="w-full h-full object-cover" />
+            </div>
+            <span class="text-[10px] uppercase tracking-editorial text-champagnedark">Murano &amp; Madrid Foundries</span>
+            <h3 class="font-serif text-2xl text-charcoal mt-1 mb-2">Sculptural Alabaster &amp; Brass Lighting</h3>
+            <p class="text-taupe text-xs sm:text-sm leading-relaxed mb-6">
+              Hand-carved Spanish alabaster luminaires and lost-wax cast bronze chandeliers calibrated to warm 2700K museum-grade CRI-98 illumination.
+            </p>
+          </div>
+          <button onclick="prefillEstimatorAndScroll('Quiet Luxury Minimalist')" class="text-left text-xs uppercase tracking-editorial text-charcoal hover:text-champagnedark font-medium pt-4 border-t border-charcoal/10">
+            Include in Cost Estimate →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- INTERACTIVE LEAD MAGNET: "60-SECOND INTERIOR COST ESTIMATOR"        -->
+    <!-- =================================================================== -->
+    <section id="section-estimator" class="py-20 sm:py-28 bg-obsidian text-alabaster scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="inline-block text-xs uppercase tracking-widest2 text-champagne mb-3">
+            Interactive Project Configurator
+          </span>
+          <h2 class="font-serif text-4xl sm:text-6xl font-light tracking-wide mb-4">
+            60-Second Interior Cost Estimator
+          </h2>
+          <p class="text-stonewarm/75 text-sm sm:text-base font-light">
+            Configure your property typology, architectural finish tier, and carpet area to generate an instant turnkey investment range—and dispatch your custom brief directly to our Principal Architect on WhatsApp.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <!-- Left Column: Interactive Controls (7 cols) -->
+          <div class="lg:col-span-7 bg-white/[0.04] border border-white/15 rounded-3xl p-6 sm:p-10 space-y-9">
+
+            <!-- STEP 1: Select Property Type -->
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <label class="text-xs uppercase tracking-editorial text-champagne font-medium">
+                  01 / Select Property Typology
+                </label>
+                <span class="text-xs text-stonewarm/50">Step 1 of 3</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5" id="estimator-property-grid">
+                <button type="button" onclick="setEstimatorProperty('Luxury Apartment / Penthouse', 1.0)" data-prop="Luxury Apartment / Penthouse" class="est-prop-btn text-left p-4 rounded-2xl border transition-all border-champagne bg-champagne/15">
+                  <span class="block font-serif text-xl text-alabaster">Luxury Apartment / Penthouse</span>
+                  <span class="block text-xs text-stonewarm/65 mt-1">Bespoke urban high-rise &amp; duplexes</span>
+                </button>
+                <button type="button" onclick="setEstimatorProperty('Farmhouse / Private Villa', 1.22)" data-prop="Farmhouse / Private Villa" class="est-prop-btn text-left p-4 rounded-2xl border transition-all border-white/15 bg-white/5 hover:border-white/35">
+                  <span class="block font-serif text-xl text-alabaster">Farmhouse / Private Villa</span>
+                  <span class="block text-xs text-stonewarm/65 mt-1">Country estates &amp; coastal pavilions</span>
+                </button>
+                <button type="button" onclick="setEstimatorProperty('Executive Office / Family Office', 0.92)" data-prop="Executive Office / Family Office" class="est-prop-btn text-left p-4 rounded-2xl border transition-all border-white/15 bg-white/5 hover:border-white/35">
+                  <span class="block font-serif text-xl text-alabaster">Executive Office / Family Office</span>
+                  <span class="block text-xs text-stonewarm/65 mt-1">C-Suite headquarters &amp; private suites</span>
+                </button>
+                <button type="button" onclick="setEstimatorProperty('Boutique Hospitality / Fine Dining', 1.35)" data-prop="Boutique Hospitality / Fine Dining" class="est-prop-btn text-left p-4 rounded-2xl border transition-all border-white/15 bg-white/5 hover:border-white/35">
+                  <span class="block font-serif text-xl text-alabaster">Boutique Hospitality / Fine Dining</span>
+                  <span class="block text-xs text-stonewarm/65 mt-1">Heritage hotels, clubs &amp; restaurants</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2: Select Aesthetic & Finish Tier -->
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <label class="text-xs uppercase tracking-editorial text-champagne font-medium">
+                  02 / Select Aesthetic &amp; Material Tier
+                </label>
+                <span class="text-xs text-stonewarm/50">Step 2 of 3</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5" id="estimator-style-grid">
+                <button type="button" onclick="setEstimatorStyle('Quiet Luxury Minimalist', 6800)" data-style="Quiet Luxury Minimalist" class="est-style-btn text-left p-4 rounded-2xl border transition-all border-white/15 bg-white/5 hover:border-white/35">
+                  <span class="block font-serif text-lg text-alabaster">Quiet Luxury Minimalist</span>
+                  <span class="block text-[11px] text-champagne mt-1">₹6,800 / sq.ft base</span>
+                  <span class="block text-[11px] text-stonewarm/60 mt-1">Lime plaster, European oak, linen drapery</span>
+                </button>
+                <button type="button" onclick="setEstimatorStyle('Classic Heritage & Bespoke Millwork', 9500)" data-style="Classic Heritage & Bespoke Millwork" class="est-style-btn text-left p-4 rounded-2xl border transition-all border-champagne bg-champagne/15">
+                  <span class="block font-serif text-lg text-alabaster">Classic Heritage &amp; Millwork</span>
+                  <span class="block text-[11px] text-champagne mt-1">₹9,500 / sq.ft base</span>
+                  <span class="block text-[11px] text-stonewarm/60 mt-1">Italian marble, walnut boiserie, brass inlay</span>
+                </button>
+                <button type="button" onclick="setEstimatorStyle('Ultra-Bespoke Collector\'s Edition', 14200)" data-style="Ultra-Bespoke Collector's Edition" class="est-style-btn text-left p-4 rounded-2xl border transition-all border-white/15 bg-white/5 hover:border-white/35">
+                  <span class="block font-serif text-lg text-alabaster">Collector's Edition</span>
+                  <span class="block text-[11px] text-champagne mt-1">₹14,200 / sq.ft base</span>
+                  <span class="block text-[11px] text-stonewarm/60 mt-1">Imported European furniture &amp; rare stone</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 3: Carpet Area Slider & Scope Checkboxes -->
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <label for="estimator-area-slider" class="text-xs uppercase tracking-editorial text-champagne font-medium">
+                  03 / Carpet / Built-Up Area (Sq.Ft.)
+                </label>
+                <div class="flex items-center gap-2">
+                  <span id="estimator-area-display" class="font-serif text-3xl text-alabaster">4,500</span>
+                  <span class="text-xs uppercase tracking-widest text-champagne">Sq. Ft.</span>
+                </div>
+              </div>
+
+              <input
+                id="estimator-area-slider"
+                type="range"
+                min="1500"
+                max="25000"
+                step="250"
+                value="4500"
+                oninput="updateEstimatorArea(this.value)"
+                class="luxury-slider my-3"
+              />
+              <div class="flex justify-between text-[11px] text-stonewarm/50 font-mono">
+                <span>1,500 sq.ft</span>
+                <span>7,500 sq.ft</span>
+                <span>15,000 sq.ft</span>
+                <span>25,000 sq.ft</span>
+              </div>
+
+              <!-- Optional City & Client Name for Personalized WhatsApp Dossier -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 pt-6 border-t border-white/10">
+                <div>
+                  <label for="estimator-city" class="block text-[11px] uppercase tracking-widest text-stonewarm/70 mb-2">Project City / Location</label>
+                  <select id="estimator-city" onchange="calculateEstimate()" class="w-full bg-obsidian border border-white/20 rounded-xl px-4 py-2.5 text-sm text-alabaster focus:outline-none focus:border-champagne">
+                    <option value="Mumbai">Mumbai (Worli / Bandra / South Mumbai)</option>
+                    <option value="New Delhi">New Delhi (Lutyens / Vasant Vihar / Chhatarpur)</option>
+                    <option value="Alibaug / Goa">Alibaug / Goa Coastal Belt</option>
+                    <option value="Bengaluru / Hyderabad">Bengaluru / Hyderabad</option>
+                    <option value="Dubai / London">International (Dubai / London)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="estimator-client-name" class="block text-[11px] uppercase tracking-widest text-stonewarm/70 mb-2">Your Name (Optional for Dossier)</label>
+                  <input id="estimator-client-name" type="text" placeholder="e.g., Kabir Singhania" oninput="calculateEstimate()" class="w-full bg-obsidian border border-white/20 rounded-xl px-4 py-2.5 text-sm text-alabaster placeholder-stonewarm/35 focus:outline-none focus:border-champagne" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Investment Dossier & WhatsApp Dispatch (5 cols) -->
+          <div class="lg:col-span-5 bg-gradient-to-b from-[#1F1D1A] to-[#151412] border border-champagne/40 rounded-3xl p-7 sm:p-9 shadow-2xl sticky top-32">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest2 text-champagne block">Turnkey Architectural Brief</span>
+                <h3 class="font-serif text-2xl text-alabaster">Estimated Investment</h3>
+              </div>
+              <!-- Currency Switcher (INR / USD) -->
+              <div class="inline-flex rounded-full bg-obsidian p-1 border border-white/15 text-xs">
+                <button type="button" id="curr-inr" onclick="setCurrency('INR')" class="px-3 py-1 rounded-full bg-champagne text-obsidian font-medium transition">INR (₹)</button>
+                <button type="button" id="curr-usd" onclick="setCurrency('USD')" class="px-3 py-1 rounded-full text-stonewarm/70 hover:text-white transition">USD ($)</button>
+              </div>
+            </div>
+
+            <!-- Dynamic Price Range Display -->
+            <div class="mb-6">
+              <p class="text-xs uppercase tracking-widest text-stonewarm/60 mb-1">Projected Turnkey Budget Range</p>
+              <div id="estimator-total-display" class="font-serif text-4xl sm:text-5xl text-champagne font-normal tracking-wide">
+                ₹4.05 Cr – ₹4.70 Cr
+              </div>
+              <p id="estimator-timeline-display" class="text-xs text-stonewarm/70 mt-2">
+                Est. Execution Timeline: <strong class="text-alabaster">24 – 30 Weeks</strong> • Includes Civil, Millwork, Furniture &amp; Lighting
+              </p>
+            </div>
+
+            <!-- 8-Stage Allocation Breakdown Bar -->
+            <div class="space-y-3 mb-8 bg-obsidian/60 p-4 rounded-2xl border border-white/10">
+              <div class="flex justify-between text-xs">
+                <span class="text-stonewarm/75">Civil, Plaster &amp; Ceiling (Stages 01–03)</span>
+                <span id="alloc-civil" class="font-mono text-champagne">22%</span>
+              </div>
+              <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-champagne/70 w-[22%]"></div>
+              </div>
+
+              <div class="flex justify-between text-xs pt-1">
+                <span class="text-stonewarm/75">Bespoke Flooring &amp; Millwork (Stages 04–05)</span>
+                <span id="alloc-millwork" class="font-mono text-champagne">36%</span>
+              </div>
+              <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-champagne w-[36%]"></div>
+              </div>
+
+              <div class="flex justify-between text-xs pt-1">
+                <span class="text-stonewarm/75">Luxury Furniture, Art &amp; Lighting (Stages 06–08)</span>
+                <span id="alloc-furniture" class="font-mono text-champagne">42%</span>
+              </div>
+              <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-[#E5C89E] w-[42%]"></div>
+              </div>
+            </div>
+
+            <!-- Send Instant Estimate to WhatsApp CTA -->
+            <button
+              type="button"
+              onclick="sendEstimateToWhatsApp()"
+              class="w-full py-4 px-6 bg-[#25D366] hover:bg-[#20bd5a] text-obsidian font-semibold text-xs uppercase tracking-editorial rounded-full transition-all duration-300 shadow-lg flex items-center justify-center gap-3"
+            >
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+              </svg>
+              <span>Send Instant Estimate to WhatsApp</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="previewWhatsAppDossier()"
+              class="w-full mt-3 py-3 px-6 bg-white/10 hover:bg-white/15 text-alabaster text-xs uppercase tracking-editorial rounded-full transition"
+            >
+              Preview Architectural Dossier Text
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PRESS & EDITORIAL ACCOLADES SECTION                                 -->
+    <!-- =================================================================== -->
+    <section id="section-press" class="py-20 sm:py-24 px-6 sm:px-10 max-w-7xl mx-auto border-b border-charcoal/10 scroll-mt-24">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs uppercase tracking-widest2 text-champagnedark block mb-2">Global Recognition</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-light">In The Press</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-7 bg-stonewarm/50 rounded-2xl border border-charcoal/10 text-center flex flex-col justify-between">
+          <div>
+            <span class="font-serif text-2xl tracking-widest text-charcoal block mb-3">ARCHITECTURAL DIGEST</span>
+            <p class="font-serif italic text-lg text-taupe mb-4">
+              “Named among the AD100 Arbiters of Subcontinental Quiet Luxury &amp; Heritage Restoration.”
+            </p>
+          </div>
+          <span class="text-[10px] uppercase tracking-editorial text-champagnedark">AD100 Hall of Fame • 2025</span>
+        </div>
+
+        <div class="p-7 bg-stonewarm/50 rounded-2xl border border-charcoal/10 text-center flex flex-col justify-between">
+          <div>
+            <span class="font-serif text-2xl tracking-widest text-charcoal block mb-3">ELLE DECOR</span>
+            <p class="font-serif italic text-lg text-taupe mb-4">
+              “A masterclass in tactile restraint—where Parisian boiserie converses with tropical modernism.”
+            </p>
+          </div>
+          <span class="text-[10px] uppercase tracking-editorial text-champagnedark">Cover Feature • Autumn Issue</span>
+        </div>
+
+        <div class="p-7 bg-stonewarm/50 rounded-2xl border border-charcoal/10 text-center flex flex-col justify-between">
+          <div>
+            <span class="font-serif text-2xl tracking-widest text-charcoal block mb-3">VOGUE LIVING</span>
+            <p class="font-serif italic text-lg text-taupe mb-4">
+              “Inside a 12,000 sq.ft. Worli sea-facing residence that redefines collector-grade living.”
+            </p>
+          </div>
+          <span class="text-[10px] uppercase tracking-editorial text-champagnedark">Global Homes Monograph</span>
+        </div>
+
+        <div class="p-7 bg-stonewarm/50 rounded-2xl border border-charcoal/10 text-center flex flex-col justify-between">
+          <div>
+            <span class="font-serif text-2xl tracking-widest text-charcoal block mb-3">ROBB REPORT</span>
+            <p class="font-serif italic text-lg text-taupe mb-4">
+              “The bespoke studio behind Asia's most coveted private family offices and palace suites.”
+            </p>
+          </div>
+          <span class="text-[10px] uppercase tracking-editorial text-champagnedark">Best of the Best Luxury Award</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- BLOGS / THE ATELIER JOURNAL SECTION                                 -->
+    <!-- =================================================================== -->
+    <section id="section-blogs" class="py-20 sm:py-24 px-6 sm:px-10 max-w-7xl mx-auto scroll-mt-24">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-widest2 text-champagnedark block mb-2">Editorial Dispatches</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-light">The Atelier Journal</h2>
+        </div>
+        <p class="text-xs uppercase tracking-editorial text-taupe">Essays on Materiality, Proportion &amp; Light</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article onclick="openJournalModal(0)" class="group cursor-pointer">
+          <div class="h-64 rounded-2xl overflow-hidden mb-5">
+            <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/700x500/F2EFE9/1C1C1C?text=Journal+01'" alt="The Poetics of Unpolished Travertine" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <span class="text-[10px] uppercase tracking-editorial text-champagnedark">Materiality • 5 Min Read</span>
+          <h3 class="font-serif text-2xl text-charcoal mt-1 mb-2 group-hover:text-champagnedark transition-colors">
+            The Poetics of Open-Pore Roman Travertine in Coastal Homes
+          </h3>
+          <p class="text-taupe text-xs sm:text-sm leading-relaxed mb-3">
+            Why leaving natural stone un-resined invites patina, acoustic softness, and centuries of architectural soul.
+          </p>
+          <span class="text-xs uppercase tracking-editorial text-charcoal font-medium">Read Essay →</span>
+        </article>
+
+        <article onclick="openJournalModal(1)" class="group cursor-pointer">
+          <div class="h-64 rounded-2xl overflow-hidden mb-5">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/700x500/F2EFE9/1C1C1C?text=Journal+02'" alt="2700K Architectural Lighting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <span class="text-[10px] uppercase tracking-editorial text-champagnedark">Illumination • 4 Min Read</span>
+          <h3 class="font-serif text-2xl text-charcoal mt-1 mb-2 group-hover:text-champagnedark transition-colors">
+            Choreographing Twilight: The Art of 2700K Cove &amp; Alabaster Lighting
+          </h3>
+          <p class="text-taupe text-xs sm:text-sm leading-relaxed mb-3">
+            How layered indirect luminance transforms a high-ceiling residence from daytime gallery to nocturnal sanctuary.
+          </p>
+          <span class="text-xs uppercase tracking-editorial text-charcoal font-medium">Read Essay →</span>
+        </article>
+
+        <article onclick="openJournalModal(2)" class="group cursor-pointer">
+          <div class="h-64 rounded-2xl overflow-hidden mb-5">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/700x500/F2EFE9/1C1C1C?text=Journal+03'" alt="Collecting Contemporary Indian Art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <span class="text-[10px] uppercase tracking-editorial text-champagnedark">Curation • 6 Min Read</span>
+          <h3 class="font-serif text-2xl text-charcoal mt-1 mb-2 group-hover:text-champagnedark transition-colors">
+            Designing Around Masterworks: Scale, Sightlines &amp; Museum Conservation
+          </h3>
+          <p class="text-taupe text-xs sm:text-sm leading-relaxed mb-3">
+            Integrating monumental canvases and bronze sculptures into daily living spaces without sacrificing intimacy.
+          </p>
+          <span class="text-xs uppercase tracking-editorial text-charcoal font-medium">Read Essay →</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- ABOUT & CONTACT FOOTER SECTION                                      -->
+    <!-- =================================================================== -->
+    <footer id="section-contact" class="bg-stonewarm border-t border-charcoal/15 pt-20 pb-14 px-6 sm:px-10 scroll-mt-24">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-charcoal/10">
+        <!-- Studio Bio -->
+        <div class="lg:col-span-5">
+          <span class="font-serif text-3xl tracking-[0.25em] text-charcoal block mb-3">KHANNA &amp; VÉRA</span>
+          <p class="font-serif italic text-xl text-charcoal/85 mb-4">
+            “Timeless spaces conceived with architectural discipline and poetic warmth.”
+          </p>
+          <p class="text-taupe text-sm leading-relaxed mb-6">
+            With over two decades of multidisciplinary excellence across luxury residences, sprawling farmhouses, corporate headquarters, and landmark hospitality properties, our studio delivers full-spectrum interior architecture, civil transformation, and global product curation.
+          </p>
+          <div class="flex items-center gap-4">
+            <button onclick="scrollToStage(0)" class="px-5 py-2.5 bg-charcoal text-alabaster text-xs uppercase tracking-editorial rounded-full hover:bg-champagnedark transition">
+              ↑ Replay 8-Stage Renovation
+            </button>
+            <a href="#section-estimator" class="px-5 py-2.5 border border-charcoal/30 text-charcoal text-xs uppercase tracking-editorial rounded-full hover:border-charcoal transition">
+              Cost Estimator
+            </a>
+          </div>
+        </div>
+
+        <!-- Global Ateliers -->
+        <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+          <div>
+            <h4 class="text-xs uppercase tracking-editorial text-champagnedark font-semibold mb-3">Mumbai Flagship Atelier</h4>
+            <p class="text-taupe leading-relaxed">
+              4th Floor, Heritage Court,<br />
+              Apollo Bunder, Colaba,<br />
+              Mumbai 400 001, India<br />
+              <span class="block mt-2 text-charcoal font-medium">+91 (22) 2284 9100</span>
+            </p>
+          </div>
+          <div>
+            <h4 class="text-xs uppercase tracking-editorial text-champagnedark font-semibold mb-3">New Delhi Studio</h4>
+            <p class="text-taupe leading-relaxed">
+              18 Prithviraj Road,<br />
+              Lutyens' Bungalow Zone,<br />
+              New Delhi 110 011, India<br />
+              <span class="block mt-2 text-charcoal font-medium">+91 (11) 4109 8200</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Private Consultation Quick Form -->
+        <div class="lg:col-span-3">
+          <h4 class="text-xs uppercase tracking-editorial text-champagnedark font-semibold mb-3">Private Commission Inquiry</h4>
+          <form onsubmit="handleFooterInquiry(event)" class="space-y-3">
+            <input type="text" id="inq-name" required placeholder="Your Full Name" class="w-full bg-alabaster border border-charcoal/15 rounded-xl px-4 py-2.5 text-xs text-charcoal focus:outline-none focus:border-champagnedark" />
+            <input type="email" id="inq-email" required placeholder="Email Address" class="w-full bg-alabaster border border-charcoal/15 rounded-xl px-4 py-2.5 text-xs text-charcoal focus:outline-none focus:border-champagnedark" />
+            <button type="submit" class="w-full py-3 bg-charcoal hover:bg-champagnedark text-alabaster text-xs uppercase tracking-editorial rounded-xl transition">
+              Request Studio Dossier
+            </button>
+            <p id="inq-feedback" class="text-xs text-champagnedark hidden pt-1"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-taupe gap-4">
+        <p>© 2026 Khanna &amp; Véra Interior Architecture Pvt. Ltd. All rights reserved.</p>
+        <div class="flex gap-6 uppercase tracking-widest text-[11px]">
+          <a href="#section-apartments" class="hover:text-charcoal">Apartments</a>
+          <a href="#section-farmhouses" class="hover:text-charcoal">Farmhouses</a>
+          <a href="#section-offices" class="hover:text-charcoal">Offices</a>
+          <a href="#section-hospitality" class="hover:text-charcoal">Hospitality</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- FULL-SCREEN PORTFOLIO LIGHTBOX MODAL                                  -->
+  <!-- ===================================================================== -->
+  <div id="portfolio-lightbox" class="fixed inset-0 z-50 hidden bg-obsidian/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-10">
+    <!-- Close Button -->
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 z-20 w-11 h-11 rounded-full bg-white/10 hover:bg-champagne text-alabaster hover:text-obsidian flex items-center justify-center text-lg transition" aria-label="Close Lightbox">
+      ✕
+    </button>
+
+    <!-- Prev / Next Arrows -->
+    <button onclick="navigateLightbox(-1)" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-champagne text-alabaster hover:text-obsidian flex items-center justify-center text-lg transition" aria-label="Previous Project">
+      ←
+    </button>
+    <button onclick="navigateLightbox(1)" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-champagne text-alabaster hover:text-obsidian flex items-center justify-center text-lg transition" aria-label="Next Project">
+      →
+    </button>
+
+    <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-8 rounded-2xl overflow-hidden bg-black/50 border border-white/10 max-h-[75vh] flex items-center justify-center">
+        <img id="lightbox-img" src="" alt="" class="w-full h-full max-h-[75vh] object-cover" />
+      </div>
+      <div class="lg:col-span-4 text-alabaster space-y-4">
+        <span id="lightbox-category" class="text-[11px] uppercase tracking-widest2 text-champagne block"></span>
+        <h3 id="lightbox-title" class="font-serif text-3xl sm:text-4xl font-light"></h3>
+        <p id="lightbox-location" class="text-xs uppercase tracking-editorial text-stonewarm/60"></p>
+        <div class="w-12 h-[1px] bg-champagne my-4"></div>
+        <p id="lightbox-desc" class="text-sm text-stonewarm/80 leading-relaxed font-light"></p>
+        <div class="pt-4 border-t border-white/10">
+          <span class="text-[10px] uppercase tracking-widest text-champagne block mb-2">Key Material Palette</span>
+          <div id="lightbox-materials" class="flex flex-wrap gap-2"></div>
+        </div>
+        <div class="pt-4">
+          <button onclick="closeLightbox(); document.getElementById('section-estimator').scrollIntoView({behavior:'smooth'});" class="w-full py-3 bg-champagne hover:bg-champagnedark text-obsidian text-xs uppercase tracking-editorial font-medium rounded-full transition">
+            Estimate Similar Project →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- WHATSAPP / JOURNAL MODAL DIALOG (Zero alert() usage)                  -->
+  <!-- ===================================================================== -->
+  <div id="custom-modal" class="fixed inset-0 z-50 hidden bg-obsidian/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-alabaster text-charcoal border border-champagne/50 rounded-3xl max-w-xl w-full p-7 sm:p-9 shadow-2xl relative">
+      <button onclick="closeCustomModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-stonewarm hover:bg-champagne text-charcoal flex items-center justify-center text-sm">
+        ✕
+      </button>
+      <span id="modal-tag" class="text-[10px] uppercase tracking-widest2 text-champagnedark block mb-1">Studio Dispatch</span>
+      <h3 id="modal-title" class="font-serif text-3xl text-charcoal mb-4"></h3>
+      <div id="modal-body" class="text-sm text-taupe space-y-3 leading-relaxed max-h-[60vh] overflow-y-auto pr-2"></div>
+      <div id="modal-actions" class="mt-6 pt-4 border-t border-charcoal/10 flex flex-wrap justify-end gap-3"></div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT ENGINE: 8-SCROLL RENOVATION, MASONRY & COST ESTIMATOR      -->
+  <!-- ===================================================================== -->
+  <script>
+    // -----------------------------------------------------------------------
+    // 1. DATA FOR THE 8 RENOVATION STAGES (0% to 100% of 800vh track)
+    // -----------------------------------------------------------------------
+    const RENOVATION_STAGES = [
+      {
+        index: 0,
+        badge: "STAGE 01 OF 08 • SCROLL 1 (0% – 12.5%)",
+        code: "SPEC // ARCH-01",
+        title: "01 / Raw Architectural Space",
+        desc: "Un-renovated structural concrete shell and exposed heritage brickwork. Laser survey lines establish axis symmetry across the 4.2-meter high salon volume.",
+        materials: ["Exposed Heritage Brick", "Board-Formed Concrete", "Raw Screed Slab"]
+      },
+      {
+        index: 1,
+        badge: "STAGE 02 OF 08 • SCROLL 2 (12.5% – 25%)",
+        code: "SPEC // FIN-02",
+        title: "02 / Wall Finishes & Base Coat",
+        desc: "Three coats of hand-troweled warm alabaster lime plaster (#FAF8F5) seamlessly envelop the raw masonry, establishing crisp architectural window reveals and shadow-gap skirting.",
+        materials: ["Warm Alabaster Plaster", "Steel Crittall Mullions", "Shadow-Gap Reveals"]
+      },
+      {
+        index: 2,
+        badge: "STAGE 03 OF 08 • SCROLL 3 (25% – 37.5%)",
+        code: "SPEC // CEIL-03",
+        title: "03 / Ceiling Architecture",
+        desc: "Suspended acoustic gypsum false ceiling installed with a deep central architectural coffer, linear slot diffusers, and trimless recessed downlight housings.",
+        materials: ["Acoustic Gypsum Coffer", "Linear Slot Diffusers", "Trimless Downlights"]
+      },
+      {
+        index: 3,
+        badge: "STAGE 04 OF 08 • SCROLL 4 (37.5% – 50%)",
+        code: "SPEC // FLR-04",
+        title: "04 / Bespoke Flooring",
+        desc: "Kiln-dried European smoked oak laid in a classic double herringbone parquet, framed by bookmatched Italian Calacatta Oro marble and a brushed champagne brass inlay strip.",
+        materials: ["Herringbone European Oak", "Calacatta Oro Marble", "Brushed Brass Inlay"]
+      },
+      {
+        index: 4,
+        badge: "STAGE 05 OF 08 • SCROLL 5 (50% – 62.5%)",
+        code: "SPEC // MILL-05",
+        title: "05 / Custom Millwork & Drapery",
+        desc: "Parisian Haussmann boiserie wall moldings, bookmatched American walnut fluted paneling with arched display niches, and floor-to-ceiling sheer Belgian linen drapery.",
+        materials: ["Fluted American Walnut", "Haussmann Boiserie", "Belgian Linen Sheers"]
+      },
+      {
+        index: 5,
+        badge: "STAGE 06 OF 08 • SCROLL 6 (62.5% – 75%)",
+        code: "SPEC // FURN-06",
+        title: "06 / Curated Luxury Furniture",
+        desc: "A bespoke curved ivory Loro Piana bouclé sofa anchors the salon, accompanied by Pierre Jeanneret-inspired teak lounge chairs and a monolithic Roman travertine coffee table.",
+        materials: ["Ivory Loro Piana Bouclé", "Roman Travertine Slab", "Burmese Teak Lounge Chairs"]
+      },
+      {
+        index: 6,
+        badge: "STAGE 07 OF 08 • SCROLL 7 (75% – 87.5%)",
+        code: "SPEC // ART-07",
+        title: "07 / Art & Styling",
+        desc: "A hand-knotted Tibetan silk-wool rug grounds the ensemble, paired with an oversized textured minimalist canvas, ceramic vessels, architecture monographs, and a sculptural Mediterranean olive tree.",
+        materials: ["Hand-Knotted Silk Rug", "Bas-Relief Abstract Canvas", "Ancient Olive Tree"]
+      },
+      {
+        index: 7,
+        badge: "STAGE 08 OF 08 • SCROLL 8 (87.5% – 100%)",
+        code: "SPEC // LUX-08",
+        title: "08 / Illumination & Final Reveal",
+        desc: "Warm 2700K architectural cove LEDs, backlit walnut niches, and a sculptural Spanish alabaster & brushed brass chandelier bathe the completed sanctuary in golden twilight.",
+        materials: ["Spanish Alabaster Chandelier", "2700K Cove Illumination", "CRI-98 Gallery Wash"]
+      }
+    ];
+
+    // -----------------------------------------------------------------------
+    // 2. PORTFOLIO GALLERY ITEMS (24 Curated Projects across 4 Categories)
+    // -----------------------------------------------------------------------
+    const PORTFOLIO_PROJECTS = {
+      apartments: [
+        {
+          title: "The Worli Sky Duplex",
+          location: "Worli Sea Face, Mumbai • 8,400 Sq.Ft.",
+          span: "md:col-span-7 h-[420px]",
+          img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85",
+          desc: "A double-height sea-facing duplex overlooking the Arabian Sea, wrapped in French walnut boiserie, open-pore travertine, and custom ivory bouclé seating.",
+          materials: ["Calacatta Viola", "French Walnut", "Loro Piana Bouclé", "Brushed Bronze"]
+        },
+        {
+          title: "Residence 42 at Altamount",
+          location: "Altamount Road, Mumbai • 5,800 Sq.Ft.",
+          span: "md:col-span-5 h-[420px]",
+          img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+          desc: "An intimate collector's apartment featuring museum-grade picture lighting, Venetian lime plaster walls, and bespoke monolithic stone dining.",
+          materials: ["Venetian Marmorino", "Smoked Oak Parquet", "Murano Glass"]
+        },
+        {
+          title: "Grosvenor Square Pied-à-Terre",
+          location: "Mayfair, London • 4,100 Sq.Ft.",
+          span: "md:col-span-5 h-[380px]",
+          img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
+          desc: "Restored Georgian proportions paired with contemporary sculptural furniture, silk-wool carpets, and hand-patinated brass fireplaces.",
+          materials: ["Haussmann Moldings", "Nero Marquina", "Belgian Linen"]
+        },
+        {
+          title: "The Burj Boulevard Penthouse",
+          location: "Downtown Dubai • 11,200 Sq.Ft.",
+          span: "md:col-span-7 h-[380px]",
+          img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85",
+          desc: "Floor-to-ceiling panoramic views softened by warm alabaster stone claddings, sunken lounges, and a custom 4-meter Spanish alabaster chandelier.",
+          materials: ["Spanish Alabaster", "Honed Travertine", "Champagne Brass"]
+        }
+      ],
+      farmhouses: [
+        {
+          title: "Villa Amaranta",
+          location: "Awas, Alibaug • 16,500 Sq.Ft.",
+          span: "md:col-span-6 h-[420px]",
+          img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=85",
+          desc: "Set amidst five acres of coconut groves, this coastal pavilion features reclaimed Burmese teak colonnades, Kota and Italian limestone floors, and breezy linen verandahs.",
+          materials: ["Reclaimed Burmese Teak", "Honed Limestone", "Handloom Linen"]
+        },
+        {
+          title: "The Chhatarpur Equestrian Estate",
+          location: "Chhatarpur Farms, New Delhi • 22,000 Sq.Ft.",
+          span: "md:col-span-6 h-[420px]",
+          img: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1400&q=85",
+          desc: "A sprawling neoclassical country estate with vaulted brick galleries, winter fireplaces, and formal manicured courtyard vistas.",
+          materials: ["Dholpur Sandstone", "Fluted Oak", "Antique Brass"]
+        },
+        {
+          title: "Casa de Palmeira",
+          location: "Assagao, North Goa • 9,200 Sq.Ft.",
+          span: "md:col-span-7 h-[380px]",
+          img: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1400&q=85",
+          desc: "Indo-Portuguese heritage architecture reimagined with laterite stone walls, cantilevered monolithic staircases, and artisanal cane weave millwork.",
+          materials: ["Goan Laterite", "Lime Stucco", "Woven Rattan & Teak"]
+        },
+        {
+          title: "The Nilgiri Glass Sanctuary",
+          location: "Coonoor, Tamil Nadu • 7,800 Sq.Ft.",
+          span: "md:col-span-5 h-[380px]",
+          img: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=85",
+          desc: "Perched above mist-laden tea estates with heated slate floors, cashmere-upholstered reading nooks, and raw cedarwood ceilings.",
+          materials: ["Heated Grey Slate", "Himalayan Cedar", "Cashmere Wool"]
+        }
+      ],
+      offices: [
+        {
+          title: "Vanguard Sovereign Family Office",
+          location: "Bandra Kurla Complex, Mumbai • 14,000 Sq.Ft.",
+          span: "md:col-span-8 h-[410px]",
+          img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=85",
+          desc: "An ultra-discreet private wealth headquarters featuring saddle-leather acoustic walls, a 16-seater travertine boardroom, and a museum-grade art corridor.",
+          materials: ["Saddle Leather Panels", "Acoustic Walnut Slats", "Travertine"]
+        },
+        {
+          title: "Chambers of Senior Counsel",
+          location: "Nariman Point, Mumbai • 4,600 Sq.Ft.",
+          span: "md:col-span-4 h-[410px]",
+          img: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85",
+          desc: "Floor-to-ceiling library shelving in smoked eucalyptus with brass rolling ladders and custom ergonomic leather executive desks.",
+          materials: ["Smoked Eucalyptus", "Unlacquered Brass", "Full-Grain Leather"]
+        },
+        {
+          title: "Aurelia Capital DIFC Suite",
+          location: "DIFC, Dubai • 8,500 Sq.Ft.",
+          span: "md:col-span-5 h-[370px]",
+          img: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=85",
+          desc: "Hospitality-inspired executive suites with private majlis lounges, espresso bars in Statuario marble, and circadian Lutron lighting.",
+          materials: ["Statuario Marble", "Brushed Bronze", "Acoustic Felt"]
+        },
+        {
+          title: "Atelier K&V Design Library",
+          location: "Lutyens' Delhi • 6,200 Sq.Ft.",
+          span: "md:col-span-7 h-[370px]",
+          img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85",
+          desc: "A sun-drenched creative sanctuary housing over 4,000 stone, textile, and metal samples alongside monolithic stone worktables.",
+          materials: ["Honed Basalt", "Bleached Oak", "Raw Linen"]
+        }
+      ],
+      hospitality: [
+        {
+          title: "The Lake Palace Royal Suites",
+          location: "Pichola, Udaipur • 28,000 Sq.Ft.",
+          span: "md:col-span-7 h-[420px]",
+          img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85",
+          desc: "Sensitive heritage restoration of royal Mewar suites featuring hand-carved Makrana marble jalis, gold-leaf frescoes, and bespoke four-poster beds.",
+          materials: ["Makrana White Marble", "Thikri Mirror Craft", "Silk Brocade"]
+        },
+        {
+          title: "M.V. Charaidew Luxury River Cruiser",
+          location: "Brahmaputra River, Assam • 18 Suites",
+          span: "md:col-span-5 h-[420px]",
+          img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=85",
+          desc: "A floating boutique hotel celebrating Assamese silk weaves, colonial brass details, and panoramic teak observation decks.",
+          materials: ["Marine Burmese Teak", "Muga Silk Textiles", "Woven Cane"]
+        },
+        {
+          title: "Saffron & Salt Fine Dining",
+          location: "Colaba, Mumbai • 6,400 Sq.Ft.",
+          span: "md:col-span-5 h-[380px]",
+          img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+          desc: "Intimate 2700K candlelit theatre featuring hand-chiseled Rosso Levanto marble raw bars, velvet banquettes, and custom alabaster sconces.",
+          materials: ["Rosso Levanto Marble", "Mohair Velvet", "Alabaster Sconces"]
+        },
+        {
+          title: "The Marwar Desert Sanctuary",
+          location: "Jodhpur, Rajasthan • 45,000 Sq.Ft.",
+          span: "md:col-span-7 h-[380px]",
+          img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=85",
+          desc: "Sandstone pavilions emerging from the Thar dunes with sunken courtyard plunge pools, lime-plastered vaults, and handcrafted nomadic textiles.",
+          materials: ["Jodhpur Sandstone", "Araish Lime Plaster", "Hand-Spun Dhurries"]
+        }
+      ]
+    };
+
+    // Flattened array for seamless Lightbox Prev/Next navigation
+    let ALL_LIGHTBOX_ITEMS = [];
+    let currentLightboxIndex = 0;
+
+    // -----------------------------------------------------------------------
+    // 3. RENDER PORTFOLIO GALLERIES & INITIALIZE LIGHTBOX
+    // -----------------------------------------------------------------------
+    function renderAllGalleries() {
+      ALL_LIGHTBOX_ITEMS = [];
+      const categories = [
+        { key: 'apartments', label: 'Apartments & Penthouses', elId: 'gallery-apartments' },
+        { key: 'farmhouses', label: 'Farmhouses & Villas', elId: 'gallery-farmhouses' },
+        { key: 'offices', label: 'Office Interiors', elId: 'gallery-offices' },
+        { key: 'hospitality', label: 'Hospitality & Fine Dining', elId: 'gallery-hospitality' }
+      ];
+
+      categories.forEach(cat => {
+        const container = document.getElementById(cat.elId);
+        if (!container) return;
+        let html = '';
+
+        PORTFOLIO_PROJECTS[cat.key].forEach(proj => {
+          const globalIndex = ALL_LIGHTBOX_ITEMS.length;
+          ALL_LIGHTBOX_ITEMS.push({ ...proj, categoryLabel: cat.label });
+
+          html += `
+            <div
+              onclick="openLightbox(${globalIndex})"
+              class="masonry-card group relative ${proj.span} rounded-2xl overflow-hidden cursor-pointer bg-stonewarm border border-charcoal/10 shadow-sm hover:shadow-2xl transition-all duration-500"
+            >
+              <img
+                src="${proj.img}"
+                onerror="this.src='https://placehold.co/1000x700/F2EFE9/1C1C1C?text=${encodeURIComponent(proj.title)}'"
+                alt="${proj.title}"
+                class="masonry-img w-full h-full object-cover transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+              <div class="absolute top-4 right-4 bg-obsidian/60 backdrop-blur-md text-alabaster text-[10px] uppercase tracking-editorial px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity border border-white/20">
+                View Full Dossier ↗
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-alabaster">
+                <span class="text-[10px] uppercase tracking-widest2 text-champagne block mb-1">${proj.location}</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-light tracking-wide">${proj.title}</h3>
+              </div>
+            </div>
+          `;
+        });
+
+        container.innerHTML = html;
+      });
+    }
+
+    function openLightbox(index) {
+      currentLightboxIndex = index;
+      updateLightboxView();
+      const modal = document.getElementById('portfolio-lightbox');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('portfolio-lightbox');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function navigateLightbox(direction) {
+      currentLightboxIndex = (currentLightboxIndex + direction + ALL_LIGHTBOX_ITEMS.length) % ALL_LIGHTBOX_ITEMS.length;
+      updateLightboxView();
+    }
+
+    function updateLightboxView() {
+      const item = ALL_LIGHTBOX_ITEMS[currentLightboxIndex];
+      if (!item) return;
+      document.getElementById('lightbox-img').src = item.img;
+      document.getElementById('lightbox-img').alt = item.title;
+      document.getElementById('lightbox-category').textContent = item.categoryLabel;
+      document.getElementById('lightbox-title').textContent = item.title;
+      document.getElementById('lightbox-location').textContent = item.location;
+      document.getElementById('lightbox-desc').textContent = item.desc;
+
+      const matContainer = document.getElementById('lightbox-materials');
+      matContainer.innerHTML = item.materials
+        .map(m => `<span class="text-[11px] uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 text-stonewarm border border-white/15">${m}</span>`)
+        .join('');
+    }
+
+    // -----------------------------------------------------------------------
+    // 4. 800VH SCROLL-TO-RENOVATE ENGINE (PROGRESSIVE 8-STAGE CROSS-FADING)
+    // -----------------------------------------------------------------------
+    let currentActiveStageIndex = 0;
+
+    function handleRenovationScroll() {
+      const track = document.getElementById('hero-renovation-track');
+      if (!track) return;
+
+      const rect = track.getBoundingClientRect();
+      const scrollableDistance = track.offsetHeight - window.innerHeight;
+      // Calculate normalized progress 0.0 to 1.0 within the 800vh track
+      let rawProgress = -rect.top / Math.max(1, scrollableDistance);
+      const progress = Math.max(0, Math.min(1, rawProgress));
+      const pct = Math.round(progress * 100);
+
+      // Update Top HUD progress bar & percentage
+      const barEl = document.getElementById('hud-progress-bar');
+      const pctEl = document.getElementById('hud-progress-pct');
+      const vertLineEl = document.getElementById('vertical-gold-line');
+      if (barEl) barEl.style.width = `${Math.max(4, pct)}%`;
+      if (pctEl) pctEl.textContent = `${pct}%`;
+      if (vertLineEl) vertLineEl.style.height = `${pct}%`;
+
+      // Determine active stage index (0 to 7, each covering 12.5% = 0.125)
+      const stageIndex = Math.min(7, Math.floor(progress * 8));
+
+      // Smoothly cross-fade/layer all 8 architectural room layers!
+      // Stage 1 (index 0) is the base shell (always opacity 1).
+      // Stages 2..8 (indices 1..7) progressively fade in during their 12.5% window and stay visible as subsequent stages layer on top!
+      for (let i = 1; i <= 7; i++) {
+        const layerEl = document.getElementById(`stage-layer-${i + 1}`);
+        if (!layerEl) continue;
+
+        const stageStart = i * 0.125;
+        const transitionSpan = 0.085; // Smooth cross-fade ramp within each scroll segment
+        let layerOpacity = (progress - stageStart + 0.015) / transitionSpan;
+        layerOpacity = Math.max(0, Math.min(1, layerOpacity));
+        layerEl.style.opacity = layerOpacity.toFixed(3);
+      }
+
+      // Stage 8 Center Studio Brand Reveal Overlay (appears smoothly between 88% and 95%)
+      const revealOverlay = document.getElementById('stage-8-brand-reveal');
+      if (revealOverlay) {
+        if (progress >= 0.875) {
+          revealOverlay.classList.remove('opacity-0', 'translate-y-6', 'pointer-events-none');
+          revealOverlay.classList.add('opacity-100', 'translate-y-0');
+        } else {
+          revealOverlay.classList.add('opacity-0', 'translate-y-6', 'pointer-events-none');
+          revealOverlay.classList.remove('opacity-100', 'translate-y-0');
+        }
+      }
+
+      // Update HUD text & right-side active stage nodes when stage changes
+      if (stageIndex !== currentActiveStageIndex) {
+        currentActiveStageIndex = stageIndex;
+        updateHeroStageHUD(stageIndex);
+      }
+    }
+
+    function updateHeroStageHUD(stageIndex) {
+      const stage = RENOVATION_STAGES[stageIndex];
+      if (!stage) return;
+
+      document.getElementById('hud-stage-pill').innerHTML = `
+        <span class="w-2 h-2 rounded-full bg-champagne animate-pulse"></span>
+        ${stage.badge}
+      `;
+      document.getElementById('hud-stage-code').textContent = stage.code;
+      document.getElementById('hud-stage-title').textContent = stage.title;
+      document.getElementById('hud-stage-desc').textContent = stage.desc;
+
+      const matEl = document.getElementById('hud-stage-materials');
+      matEl.innerHTML = stage.materials
+        .map(m => `<span class="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/10 text-stonewarm">${m}</span>`)
+        .join('');
+
+      // Highlight right-side vertical progress nodes (01 to 08)
+      const nodes = document.querySelectorAll('.stage-node');
+      nodes.forEach((node, idx) => {
+        if (idx === stageIndex) {
+          node.className = 'stage-node group relative flex items-center justify-center w-8 h-8 rounded-full text-[11px] font-semibold transition-all duration-300 bg-champagne text-obsidian shadow-lg scale-110';
+        } else if (idx < stageIndex) {
+          node.className = 'stage-node group relative flex items-center justify-center w-8 h-8 rounded-full text-[11px] font-medium transition-all duration-300 bg-champagne/30 text-alabaster border border-champagne';
+        } else {
+          node.className = 'stage-node group relative flex items-center justify-center w-8 h-8 rounded-full text-[11px] font-medium transition-all duration-300 bg-obsidian/80 text-stonewarm/60 border border-white/20 hover:border-champagne';
+        }
+      });
+    }
+
+    // Smoothly scroll to a specific renovation stage (0 to 7)
+    function scrollToStage(stageIdx) {
+      const track = document.getElementById('hero-renovation-track');
+      if (!track) return;
+      const clampedIdx = Math.max(0, Math.min(7, stageIdx));
+      const scrollableDistance = track.offsetHeight - window.innerHeight;
+      // Target middle of that stage's scroll window so the layer is 100% locked in
+      const targetProgress = clampedIdx === 0 ? 0.02 : (clampedIdx * 0.125) + 0.08;
+      const targetY = track.offsetTop + (scrollableDistance * Math.min(0.98, targetProgress));
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+
+    function stepStage(delta) {
+      scrollToStage(currentActiveStageIndex + delta);
+    }
+
+    function scrollToPortfolio() {
+      const el = document.getElementById('editorial-portfolio-start');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // -----------------------------------------------------------------------
+    // 5. 60-SECOND INTERIOR COST ESTIMATOR ENGINE + WHATSAPP INTEGRATION
+    // -----------------------------------------------------------------------
+    let estimatorState = {
+      propertyType: 'Luxury Apartment / Penthouse',
+      propertyMultiplier: 1.0,
+      styleName: 'Classic Heritage & Bespoke Millwork',
+      baseRatePerSqFt: 9500, // in INR
+      areaSqFt: 4500,
+      currency: 'INR'
+    };
+
+    function setEstimatorProperty(name, multiplier) {
+      estimatorState.propertyType = name;
+      estimatorState.propertyMultiplier = multiplier;
+
+      document.querySelectorAll('.est-prop-btn').forEach(btn => {
+        if (btn.getAttribute('data-prop') === name) {
+          btn.className = 'est-prop-btn text-left p-4 rounded-2xl border transition-all border-champagne bg-champagne/15';
+        } else {
+          btn.className = 'est-prop-btn text-left p-4 rounded-2xl border transition-all border-white/15 bg-white/5 hover:border-white/35';
+        }
+      });
+      calculateEstimate();
+    }
+
+    function setEstimatorStyle(styleName, baseRate) {
+      estimatorState.styleName = styleName;
+      estimatorState.baseRatePerSqFt = baseRate;
+
+      document.querySelectorAll('.est-style-btn').forEach(btn => {
+        if (btn.getAttribute('data-style') === styleName) {
+          btn.className = 'est-style-btn text-left p-4 rounded-2xl border transition-all border-champagne bg-champagne/15';
+        } else {
+          btn.className = 'est-style-btn text-left p-4 rounded-2xl border transition-all border-white/15 bg-white/5 hover:border-white/35';
+        }
+      });
+      calculateEstimate();
+    }
+
+    function updateEstimatorArea(val) {
+      estimatorState.areaSqFt = parseInt(val, 10) || 4500;
+      document.getElementById('estimator-area-display').textContent = estimatorState.areaSqFt.toLocaleString('en-IN');
+      calculateEstimate();
+    }
+
+    function setCurrency(curr) {
+      estimatorState.currency = curr;
+      const inrBtn = document.getElementById('curr-inr');
+      const usdBtn = document.getElementById('curr-usd');
+      if (curr === 'INR') {
+        inrBtn.className = 'px-3 py-1 rounded-full bg-champagne text-obsidian font-medium transition';
+        usdBtn.className = 'px-3 py-1 rounded-full text-stonewarm/70 hover:text-white transition';
+      } else {
+        usdBtn.className = 'px-3 py-1 rounded-full bg-champagne text-obsidian font-medium transition';
+        inrBtn.className = 'px-3 py-1 rounded-full text-stonewarm/70 hover:text-white transition';
+      }
+      calculateEstimate();
+    }
+
+    function formatInrCrores(amountInr) {
+      const crores = amountInr / 10000000;
+      if (crores >= 1) {
+        return `₹${crores.toFixed(2)} Cr`;
+      }
+      const lakhs = amountInr / 100000;
+      return `₹${Math.round(lakhs)} Lakhs`;
+    }
+
+    function formatUsd(amountInr) {
+      const usd = amountInr / 84;
+      return `$${Math.round(usd / 1000).toLocaleString('en-US')}K`;
+    }
+
+    function calculateEstimate() {
+      const rawTotalInr = estimatorState.areaSqFt * estimatorState.baseRatePerSqFt * estimatorState.propertyMultiplier;
+      const lowInr = rawTotalInr * 0.94;
+      const highInr = rawTotalInr * 1.08;
+
+      const totalDisplay = document.getElementById('estimator-total-display');
+      if (estimatorState.currency === 'INR') {
+        totalDisplay.textContent = `${formatInrCrores(lowInr)} – ${formatInrCrores(highInr)}`;
+      } else {
+        totalDisplay.textContent = `${formatUsd(lowInr)} – ${formatUsd(highInr)}`;
+      }
+
+      // Estimate timeline in weeks based on area & finish tier
+      const baseWeeks = Math.round(16 + (estimatorState.areaSqFt / 750) * estimatorState.propertyMultiplier);
+      const maxWeeks = baseWeeks + 6;
+      document.getElementById('estimator-timeline-display').innerHTML = `
+        Est. Execution Timeline: <strong class="text-alabaster">${baseWeeks} – ${maxWeeks} Weeks</strong> • Turnkey 8-Stage Execution
+      `;
+    }
+
+    function buildWhatsAppMessageText() {
+      const city = document.getElementById('estimator-city').value;
+      const clientName = document.getElementById('estimator-client-name').value.trim() || 'Private Client';
+      const budgetText = document.getElementById('estimator-total-display').textContent.trim();
+
+      return [
+        `*KHANNA & VÉRA | BESPOKE INTERIOR BRIEF*`,
+        `-----------------------------------------`,
+        `*Client:* ${clientName}`,
+        `*Location:* ${city}`,
+        `*Property Typology:* ${estimatorState.propertyType}`,
+        `*Aesthetic Tier:* ${estimatorState.styleName}`,
+        `*Carpet Area:* ${estimatorState.areaSqFt.toLocaleString('en-IN')} Sq.Ft.`,
+        `*Estimated Turnkey Investment:* ${budgetText}`,
+        `-----------------------------------------`,
+        `I would like to schedule a private consultation with the Principal Architect to discuss floor plans and material curation.`
+      ].join('\n');
+    }
+
+    function sendEstimateToWhatsApp() {
+      const text = buildWhatsAppMessageText();
+      const waUrl = `https://wa.me/919820000000?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+      previewWhatsAppDossier(true);
+    }
+
+    function previewWhatsAppDossier(wasDispatched = false) {
+      const text = buildWhatsAppMessageText();
+      const modal = document.getElementById('custom-modal');
+      document.getElementById('modal-tag').textContent = wasDispatched
+        ? 'WhatsApp Dispatch Triggered'
+        : '60-Second Estimator Dossier';
+      document.getElementById('modal-title').textContent = 'Your Bespoke Architectural Brief';
+      document.getElementById('modal-body').innerHTML = `
+        <p class="text-xs text-taupe mb-3">
+          ${wasDispatched ? 'Your pre-filled architectural estimate has been formatted for WhatsApp. You can also copy the brief below:' : 'Review your personalized turnkey estimate summary below:'}
+        </p>
+        <pre id="dossier-copy-target" class="bg-stonewarm p-4 rounded-2xl text-xs text-charcoal font-mono whitespace-pre-wrap border border-charcoal/10">${text}</pre>
+      `;
+      document.getElementById('modal-actions').innerHTML = `
+        <button onclick="copyDossierText()" id="copy-dossier-btn" class="px-5 py-2.5 bg-stonewarm hover:bg-champagne/30 text-charcoal text-xs uppercase tracking-editorial rounded-full transition">
+          Copy Brief to Clipboard
+        </button>
+        <a href="https://wa.me/919820000000?text=${encodeURIComponent(text)}" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 bg-[#25D366] text-obsidian font-semibold text-xs uppercase tracking-editorial rounded-full">
+          Open WhatsApp ↗
+        </a>
+      `;
+      modal.classList.remove('hidden');
+    }
+
+    function copyDossierText() {
+      const pre = document.getElementById('dossier-copy-target');
+      if (!pre) return;
+      const textarea = document.createElement('textarea');
+      textarea.value = pre.textContent;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      const btn = document.getElementById('copy-dossier-btn');
+      if (btn) btn.textContent = '✓ Copied to Clipboard';
+    }
+
+    function prefillEstimatorAndScroll(styleName) {
+      const rates = {
+        'Quiet Luxury Minimalist': 6800,
+        'Classic Heritage & Bespoke Millwork': 9500,
+        "Ultra-Bespoke Collector's Edition": 14200
+      };
+      setEstimatorStyle(styleName, rates[styleName] || 9500);
+      document.getElementById('section-estimator').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // -----------------------------------------------------------------------
+    // 6. EDITORIAL JOURNAL ESSAYS MODAL & FOOTER FORM HANDLER
+    // -----------------------------------------------------------------------
+    const JOURNAL_ESSAYS = [
+      {
+        tag: "Materiality • Atelier Monograph",
+        title: "The Poetics of Open-Pore Roman Travertine in Coastal Homes",
+        body: `
+          <p>In coastal sanctuaries from Alibaug to Assagao, high-gloss synthetic surfaces quickly feel alien against the raw drama of monsoon skies and tropical foliage. At Khanna &amp; Véra, our material library favors un-resined, open-pore Roman and Silver Travertine cut against the vein.</p>
+          <p>When left honed and unfilled, travertine absorbs harsh glare, softens room acoustics, and develops a warm, honeyed patina over decades of barefoot living. Combined with wire-brushed Burmese teak and hand-troweled lime plaster, the stone anchors the room in geological permanence.</p>
+        `
+      },
+      {
+        tag: "Illumination • Stage 08 Philosophy",
+        title: "Choreographing Twilight: The Art of 2700K Cove & Alabaster Lighting",
+        body: `
+          <p>As demonstrated in Stage 08 of our Scroll-to-Renovate room experience, architectural lighting should never announce its source—only its effect. We design every ceiling coffer and fluted walnut niche with concealed 2700K CRI-98 linear LED strips that graze natural textures softly.</p>
+          <p>At the center of the salon, hand-carved Spanish alabaster vessels diffuse light through translucent stone veining, creating an intimate golden glow reminiscent of candlelight.</p>
+        `
+      },
+      {
+        tag: "Curation • Collector Residences",
+        title: "Designing Around Masterworks: Scale, Sightlines & Museum Conservation",
+        body: `
+          <p>Many of our clients possess significant collections of modern and contemporary South Asian and European art. Rather than treating art as an afterthought (Stage 07), our architectural axes and Haussmann boiserie proportions are calibrated from day one around key canvases and bronze sculptures.</p>
+          <p>UV-filtered glazing, museum-grade framing projectors, and concealed climate control preserve heirloom works within warm, livable family salons.</p>
+        `
+      }
+    ];
+
+    function openJournalModal(idx) {
+      const essay = JOURNAL_ESSAYS[idx];
+      if (!essay) return;
+      const modal = document.getElementById('custom-modal');
+      document.getElementById('modal-tag').textContent = essay.tag;
+      document.getElementById('modal-title').textContent = essay.title;
+      document.getElementById('modal-body').innerHTML = essay.body;
+      document.getElementById('modal-actions').innerHTML = `
+        <button onclick="closeCustomModal()" class="px-6 py-2.5 bg-charcoal text-alabaster text-xs uppercase tracking-editorial rounded-full">
+          Close Essay
+        </button>
+      `;
+      modal.classList.remove('hidden');
+    }
+
+    function closeCustomModal() {
+      document.getElementById('custom-modal').classList.add('hidden');
+    }
+
+    function handleFooterInquiry(e) {
+      e.preventDefault();
+      const name = document.getElementById('inq-name').value.trim();
+      const feedback = document.getElementById('inq-feedback');
+      feedback.textContent = `Thank you, ${name}. Our Principal Architect's office has dispatched the 2026 Studio Monograph to your inbox.`;
+      feedback.classList.remove('hidden');
+      e.target.reset();
+    }
+
+    // Keyboard navigation for Lightbox & Renovation Stages
+    window.addEventListener('keydown', (e) => {
+      const lightbox = document.getElementById('portfolio-lightbox');
+      if (lightbox && !lightbox.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') navigateLightbox(1);
+        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      }
+      const customModal = document.getElementById('custom-modal');
+      if (customModal && !customModal.classList.contains('hidden') && e.key === 'Escape') {
+        closeCustomModal();
+      }
+    });
+
+    // Initialize everything on load
+    window.addEventListener('scroll', handleRenovationScroll, { passive: true });
+    window.addEventListener('resize', handleRenovationScroll);
+    window.addEventListener('DOMContentLoaded', () => {
+      renderAllGalleries();
+      calculateEstimate();
+      handleRenovationScroll();
+    });
+  </script>
+</body>
+</html>
